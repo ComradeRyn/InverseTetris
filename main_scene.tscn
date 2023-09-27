@@ -84,5 +84,5 @@ position = Vector2(576, 478)
 [node name="RigidBody2D" parent="." instance=ExtResource("3_dhedf")]
 position = Vector2(740, 519)
 
-[node name="RigidBody2D2" parent="." instance=ExtResource("4_kifu6")]
+[node name="player2" parent="." instance=ExtResource("4_kifu6")]
 position = Vector2(423, 492)
