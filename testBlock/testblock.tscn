@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmc4oksxm61x"]
+
+[ext_resource type="Script" path="res://testBlock/testblock.gd" id="1_0ufa2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvmul"]
+size = Vector2(49, 45.5)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+mass = 10.0
+max_contacts_reported = 2
+contact_monitor = true
+lock_rotation = true
+script = ExtResource("1_0ufa2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hvmul")
+
+[node name="Panel" type="Panel" parent="CollisionShape2D"]
+offset_left = -25.0
+offset_top = -23.0
+offset_right = 25.0
+offset_bottom = 23.0

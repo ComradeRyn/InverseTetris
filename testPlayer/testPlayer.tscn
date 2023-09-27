@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv08usgmi7ngg"]
+
+[ext_resource type="Script" path="res://testPlayer/testPlayer.gd" id="1_eky6c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ivoi5"]
+radius = 20.0
+height = 40.0
+
+[node name="player" type="RigidBody2D"]
+max_contacts_reported = 2
+contact_monitor = true
+script = ExtResource("1_eky6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ivoi5")
+
+[node name="Panel" type="Panel" parent="CollisionShape2D"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 17.0
+offset_bottom = 17.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
