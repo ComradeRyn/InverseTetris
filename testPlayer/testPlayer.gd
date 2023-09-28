@@ -8,9 +8,11 @@ var yVel = 0;
 var isJumping = false
 var temp = 0;
 var justJumped = false
+@onready var anim = get_node("PlayerAnim")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	anim.play("Idle")
 	self.lock_rotation = true;
 	self.set_meta("type", "player")    # set myNode type to "enemy"
 	
@@ -50,13 +52,17 @@ func _physics_process(delta):
 	
 	#Left and right movement controls
 	if isD && !isDashing && !justJumped:
+		anim.play("Run")
 		temp = SPEED
 		self.set_linear_velocity(Vector2(SPEED, yVel))
 		
 	elif isA && !isDashing && !justJumped:
+		anim.play("Run")
 		temp = -SPEED
 		self.set_linear_velocity(Vector2(-SPEED,yVel))
 	
+	else:
+		anim.play("Idle")
 	#Dashing Controls
 	if isS && isD && !isDashing:
 		isDashing = true
@@ -74,7 +80,7 @@ func _physics_process(delta):
 	if(self.get_linear_velocity().x > 0):
 		direction = 1;
 	
-	elif(self.get_linear_velocity().x > 0):
+	elif(self.get_linear_velocity().x > 0): 
 		direction = -1;
 	
 	else:

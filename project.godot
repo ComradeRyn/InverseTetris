@@ -15,6 +15,11 @@ run/main_scene="res://main_scene.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
+[dotnet]
+
+project/assembly_name="InverseTetris"
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
