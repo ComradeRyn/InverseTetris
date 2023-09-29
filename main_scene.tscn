@@ -1,88 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://bwovedjlukoum"]
+[gd_scene load_steps=9 format=3 uid="uid://bwovedjlukoum"]
 
 [ext_resource type="Texture2D" uid="uid://beve8fypwyp22" path="res://tile.png" id="2_edgmo"]
-[ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://testPlayer/testPlayer.tscn" id="2_erxr0"]
+[ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/testPlayer/testPlayer.tscn" id="2_erxr0"]
 [ext_resource type="Script" path="res://TileMap.gd" id="2_wnycy"]
-[ext_resource type="PackedScene" uid="uid://dmc4oksxm61x" path="res://testBlock/testblock.tscn" id="3_dhedf"]
-[ext_resource type="Texture2D" uid="uid://b5jsnu4hcsxti" path="res://Sprites/Player/Player.png" id="4_io32u"]
-[ext_resource type="PackedScene" uid="uid://bwl8t4tljjuca" path="res://testPlayer2/testPlayer2.tscn" id="4_kifu6"]
+[ext_resource type="PackedScene" uid="uid://dmc4oksxm61x" path="res://Prefabs/testBlock/testblock.tscn" id="3_dhedf"]
 [ext_resource type="Texture2D" uid="uid://16i1cqcp7g37" path="res://Sprites/I-block.png" id="7_kv3mg"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oquob"]
-atlas = ExtResource("4_io32u")
-region = Rect2(0, 0, 12, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y7nb5"]
-atlas = ExtResource("4_io32u")
-region = Rect2(12, 0, 12, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7wvqr"]
-atlas = ExtResource("4_io32u")
-region = Rect2(24, 0, 12, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6vbg8"]
-atlas = ExtResource("4_io32u")
-region = Rect2(36, 0, 12, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_emegd"]
-atlas = ExtResource("4_io32u")
-region = Rect2(48, 0, 12, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cwj8c"]
-atlas = ExtResource("4_io32u")
-region = Rect2(60, 0, 12, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hyilx"]
-atlas = ExtResource("4_io32u")
-region = Rect2(72, 0, 12, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3lyfd"]
-atlas = ExtResource("4_io32u")
-region = Rect2(84, 0, 12, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_js80m"]
-atlas = ExtResource("4_io32u")
-region = Rect2(96, 0, 12, 12)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0ey0t"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oquob")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y7nb5")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_7wvqr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6vbg8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_emegd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cwj8c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hyilx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3lyfd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_js80m")
-}],
-"loop": true,
-"name": &"Run",
-"speed": 5.0
-}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2fa4r"]
 
@@ -146,15 +68,10 @@ sources/1 = SubResource("TileSetAtlasSource_yx0sw")
 
 [node name="MainCamera" type="Camera2D" parent="."]
 position = Vector2(600, 300)
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.925, 0.925)
 
 [node name="Player" parent="." instance=ExtResource("2_erxr0")]
-position = Vector2(576, 478)
-
-[node name="PlayerAnim" type="AnimatedSprite2D" parent="Player"]
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_0ey0t")
-animation = &"Run"
+position = Vector2(528, 449)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5d5tl")
@@ -165,9 +82,6 @@ script = ExtResource("2_wnycy")
 [node name="RigidBody2D" parent="." instance=ExtResource("3_dhedf")]
 position = Vector2(740, 519)
 
-[node name="player2" parent="." instance=ExtResource("4_kifu6")]
-position = Vector2(423, 492)
-
 [node name="I-block" type="Sprite2D" parent="."]
 position = Vector2(466, 182)
 texture = ExtResource("7_kv3mg")
@@ -175,9 +89,3 @@ texture = ExtResource("7_kv3mg")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-
-[node name="Panel" type="Panel" parent="."]
-offset_left = 1421.0
-offset_top = 223.0
-offset_right = 2584.0
-offset_bottom = 302.0

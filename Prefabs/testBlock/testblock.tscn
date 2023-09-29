@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dmc4oksxm61x"]
 
-[ext_resource type="Script" path="res://Prefabs/testBlock/testblock.gd" id="1_b5gei"]
+[ext_resource type="Script" path="res://Prefabs/testBlock/testblock.gd" id="1_be3x0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvmul"]
 size = Vector2(49, 45.5)
@@ -10,7 +10,7 @@ mass = 10.0
 max_contacts_reported = 2
 contact_monitor = true
 lock_rotation = true
-script = ExtResource("1_b5gei")
+script = ExtResource("1_be3x0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hvmul")
