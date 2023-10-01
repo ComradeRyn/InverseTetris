@@ -94,6 +94,6 @@ shape = SubResource("CircleShape2D_g1u81")
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_2ajw0")
-animation = &"Run"
+animation = &"Idle"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
