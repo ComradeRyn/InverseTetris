@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://culxpg6q1anoi"]
+
+[ext_resource type="Script" path="res://Prefabs/Wall/wall.gd" id="1_d88la"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uo54u"]
+size = Vector2(38, 37)
+
+[node name="Wall" type="Node2D"]
+script = ExtResource("1_d88la")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(1, 15.01)
+shape = SubResource("RectangleShape2D_uo54u")
+
+[node name="Panel" type="Panel" parent="RigidBody2D/CollisionShape2D"]
+offset_left = -20.0
+offset_top = -19.0
+offset_right = 19.0
+offset_bottom = 19.0

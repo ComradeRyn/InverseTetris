@@ -18,18 +18,19 @@ func _ready():
 	
 
 func _on_body_entered(body):
-	isJumping = false;
-	justJumped = false;
-	var getType = body.get_meta("type")    # get the type of myNode
-	if(getType == "block" && (isDashing)):
-		body.apply_central_impulse(Vector2(100,0))
-		self.apply_central_impulse(Vector2(-100,0))
-		print("sus")
+	if(body.get_meta("type") != "wall"):
+		isJumping = false;
+		justJumped = false;
+		var getType = body.get_meta("type")    # get the type of myNode
+		if(getType == "block" && (isDashing)):
+			body.apply_central_impulse(Vector2(100,0))
+			self.apply_central_impulse(Vector2(-100,0))
+			print("sus")
 		
-	if(getType == "block"):
-		print(getType)
+		if(getType == "block"):
+			print(getType)
 		
-	isDashing = false;
+		isDashing = false;
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
