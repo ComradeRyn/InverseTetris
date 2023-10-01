@@ -71,7 +71,7 @@ position = Vector2(600, 300)
 zoom = Vector2(0.925, 0.925)
 
 [node name="Player" parent="." instance=ExtResource("2_erxr0")]
-position = Vector2(528, 449)
+position = Vector2(302, 445)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5d5tl")
