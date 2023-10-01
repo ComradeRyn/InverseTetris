@@ -1,11 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dcyrh64ps6j3v"]
 
 [ext_resource type="Texture2D" uid="uid://beve8fypwyp22" path="res://tile.png" id="2_edgmo"]
-
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_yepoe"]
 [ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/testPlayer.tscn" id="3_f3m7r"]
 [ext_resource type="PackedScene" uid="uid://dmc4oksxm61x" path="res://Prefabs/testblock.tscn" id="4_6f5tb"]
-
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2fa4r"]
 
@@ -71,7 +69,6 @@ sources/1 = SubResource("TileSetAtlasSource_yx0sw")
 position = Vector2(600, 300)
 zoom = Vector2(0.925, 0.925)
 
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5d5tl")
 format = 2
@@ -87,4 +84,3 @@ position = Vector2(488, 425)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("4_6f5tb")]
 position = Vector2(733, 503)
-
