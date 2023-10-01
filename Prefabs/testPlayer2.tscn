@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwl8t4tljjuca"]
 
-[ext_resource type="Script" path="res://Prefabs/testPlayer2/testPlayer2.gd" id="1_6wyxg"]
+[ext_resource type="Script" path="res://Scripts/testPlayer2.gd" id="1_gj6pv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63siy"]
 
 [node name="RigidBody2D" type="RigidBody2D"]
 max_contacts_reported = 2
 contact_monitor = true
-script = ExtResource("1_6wyxg")
+script = ExtResource("1_gj6pv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_63siy")
