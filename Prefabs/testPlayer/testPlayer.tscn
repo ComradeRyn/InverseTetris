@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Prefabs/testPlayer/testPlayer.gd" id="1_emt6t"]
 [ext_resource type="Texture2D" uid="uid://b5jsnu4hcsxti" path="res://Sprites/Player/Player.png" id="2_3o3ky"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5dom"]
-size = Vector2(18, 18)
+[sub_resource type="CircleShape2D" id="CircleShape2D_g1u81"]
+radius = 9.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oquob"]
 atlas = ExtResource("2_3o3ky")
@@ -89,7 +89,7 @@ script = ExtResource("1_emt6t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_a5dom")
+shape = SubResource("CircleShape2D_g1u81")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
