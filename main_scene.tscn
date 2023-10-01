@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/testPlayer/testPlayer.tscn" id="2_erxr0"]
 [ext_resource type="Script" path="res://TileMap.gd" id="2_wnycy"]
 [ext_resource type="PackedScene" uid="uid://dmc4oksxm61x" path="res://Prefabs/testBlock/testblock.tscn" id="3_dhedf"]
-[ext_resource type="PackedScene" uid="uid://duh4355r5gls8" path="res://wall.tscn" id="5_ejp64"]
+[ext_resource type="PackedScene" path="res://wall.tscn" id="5_ejp64"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2fa4r"]
 
