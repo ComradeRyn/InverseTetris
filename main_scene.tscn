@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcyrh64ps6j3v"]
+[gd_scene load_steps=9 format=3 uid="uid://dcyrh64ps6j3v"]
 
 [ext_resource type="Texture2D" uid="uid://beve8fypwyp22" path="res://tile.png" id="2_edgmo"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_yepoe"]
-[ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/testPlayer.tscn" id="3_f3m7r"]
-[ext_resource type="PackedScene" uid="uid://dmc4oksxm61x" path="res://Prefabs/testblock.tscn" id="4_6f5tb"]
+[ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/Player.tscn" id="3_f3m7r"]
+[ext_resource type="PackedScene" uid="uid://dmc4oksxm61x" path="res://Prefabs/MoveableBlock.tscn" id="4_6f5tb"]
+[ext_resource type="PackedScene" uid="uid://dju14nvribys5" path="res://Prefabs/i_block.tscn" id="5_ln5c7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2fa4r"]
 
@@ -82,5 +83,8 @@ script = ExtResource("2_yepoe")
 [node name="Player" parent="." instance=ExtResource("3_f3m7r")]
 position = Vector2(488, 425)
 
-[node name="RigidBody2D" parent="." instance=ExtResource("4_6f5tb")]
-position = Vector2(733, 503)
+[node name="Block" parent="." instance=ExtResource("4_6f5tb")]
+position = Vector2(1182, -30)
+
+[node name="I-block" parent="." instance=ExtResource("5_ln5c7")]
+position = Vector2(374, 157)
