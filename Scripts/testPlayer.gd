@@ -3,11 +3,12 @@ extends RigidBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var direction = 0
+var invdirection = direction * -1
 var isDashing = false
 var yVel = 0;
 var isJumping = false
 var temp = 0;
-var justJumped = false
+var isBouncing = false
 @onready var anim = get_node("PlayerAnim")
 
 # Called when the node enters the scene tree for the first time.
@@ -18,12 +19,13 @@ func _ready():
 	
 
 func _on_body_entered(body):
+	var getType = body.get_meta("type") # get the type of myNode
 	isJumping = false;
-	justJumped = false;
-	var getType = body.get_meta("type")    # get the type of myNode
-	if(getType == "block" && (isDashing)):
-		body.apply_central_impulse(Vector2(100,0))
-		self.apply_central_impulse(Vector2(-100,0))
+	print(getType)
+	if(getType != "grid" && (isDashing)):
+		isBouncing = true
+		body.apply_central_impulse(Vector2(300 * direction,0))
+		self.apply_central_impulse(Vector2(300 * 2 * invdirection,0))
 		print("sus")
 		
 	if(getType == "block"):
@@ -40,23 +42,25 @@ func _physics_process(delta):
 	var isA = Input.is_physical_key_pressed(KEY_A)
 	var isD = Input.is_physical_key_pressed(KEY_D)
 	var yVel = self.get_linear_velocity().y
-	print( self.get_linear_velocity().x)
+	invdirection = direction * -1
+	print(direction)
 	
 	#print(isJumping)
 	# Handle Jump.
 	if (isW && !isJumping):
 		isJumping = true;
-		justJumped = true;
-		self.apply_central_impulse(Vector2(0, -400))
+	#	justJumped = true;
+		yVel = -400
+		self.apply_central_impulse(Vector2(0, yVel))
 		
 	
 	#Left and right movement controls
-	if isD && !isDashing && !justJumped:
+	if isD && !isDashing && !isBouncing:
 		anim.play("Run")
 		temp = SPEED
 		self.set_linear_velocity(Vector2(SPEED, yVel))
 		
-	elif isA && !isDashing && !justJumped:
+	elif isA && !isDashing && !isBouncing:
 		anim.play("Run")
 		temp = -SPEED
 		self.set_linear_velocity(Vector2(-SPEED,yVel))
@@ -85,10 +89,11 @@ func _physics_process(delta):
 	
 	else:
 		direction = 0;
+	
+	if(isBouncing):
+		await get_tree().create_timer(1).timeout
+		#isBouncing = false
 		
-	if(justJumped):
-		await get_tree().create_timer(.0000001).timeout
-		justJumped = false;
 
 
 
