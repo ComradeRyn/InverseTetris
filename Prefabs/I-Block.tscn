@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dju14nvribys5"]
 
-[ext_resource type="Texture2D" uid="uid://16i1cqcp7g37" path="res://Sprites/I-block.png" id="1_fhdnn"]
+[ext_resource type="Texture2D" uid="uid://16i1cqcp7g37" path="res://Sprites/I-block.png" id="1_psyrq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbfpy"]
 size = Vector2(16, 4)
@@ -9,7 +9,7 @@ size = Vector2(16, 4)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
-texture = ExtResource("1_fhdnn")
+texture = ExtResource("1_psyrq")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
