@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_yepoe"]
 [ext_resource type="PackedScene" uid="uid://dmc4oksxm61x" path="res://Prefabs/MoveableBlock.tscn" id="4_6f5tb"]
 [ext_resource type="PackedScene" uid="uid://dju14nvribys5" path="res://Prefabs/i_block.tscn" id="5_ln5c7"]
-[ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/testPlayer.tscn" id="5_m5d5l"]
+[ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/Player.tscn" id="5_m5d5l"]
 [ext_resource type="Texture2D" uid="uid://dxsahyop138tt" path="res://Sprites/Tile.png" id="6_60w08"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m5dld"]
