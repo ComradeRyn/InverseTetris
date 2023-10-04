@@ -92,7 +92,7 @@ func _physics_process(delta):
 	
 	if(isBouncing):
 		await get_tree().create_timer(1).timeout
-		#isBouncing = false
+		isBouncing = false
 		
 
 
