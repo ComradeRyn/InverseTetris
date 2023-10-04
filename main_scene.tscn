@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dmc4oksxm61x" path="res://Prefabs/MoveableBlock.tscn" id="4_6f5tb"]
 [ext_resource type="PackedScene" uid="uid://dju14nvribys5" path="res://Prefabs/I-Block.tscn" id="5_ln5c7"]
 [ext_resource type="Script" path="res://Scripts/Spawner.gd" id="6_2heko"]
-[ext_resource type="Texture2D" uid="uid://dxsahyop138tt" path="res://Sprites/Tile.png" id="6_60w08"]
+[ext_resource type="Texture2D" uid="uid://beve8fypwyp22" path="res://Sprites/Tile.png" id="6_60w08"]
 [ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/Player.tscn" id="6_hou6m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m5dld"]
@@ -45,6 +45,3 @@ script = ExtResource("6_2heko")
 
 [node name="Player" parent="." instance=ExtResource("6_hou6m")]
 position = Vector2(0, -10)
-
-[node name="Player2" parent="." instance=ExtResource("6_hou6m")]
-position = Vector2(-70, -106)
