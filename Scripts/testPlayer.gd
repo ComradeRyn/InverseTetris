@@ -2,6 +2,7 @@ extends RigidBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const recoil = 0
 var direction = 0
 var invdirection = direction * -1
 var isDashing = false
@@ -28,9 +29,6 @@ func _on_body_entered(body):
 		self.apply_central_impulse(Vector2(300 * 2 * invdirection,0))
 		print("sus")
 		
-	if(getType == "block"):
-		print(getType)
-		
 	isDashing = false;
 
 
@@ -42,6 +40,7 @@ func _physics_process(delta):
 	var isA = Input.is_physical_key_pressed(KEY_A)
 	var isD = Input.is_physical_key_pressed(KEY_D)
 	var isG = Input.is_physical_key_pressed(KEY_G)
+
 	
 	if(isG):
 		isBouncing = false
@@ -74,7 +73,7 @@ func _physics_process(delta):
 	else:
 		anim.play("Idle")
 	#Dashing Controls
-	if isS && isD && !isDashing:
+	if isS && isD && !isDashing && !isBouncing:
 		isDashing = true
 		self.apply_central_impulse(Vector2(SPEED * 1.2,0))
 	
