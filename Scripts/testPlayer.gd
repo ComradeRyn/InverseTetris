@@ -41,6 +41,12 @@ func _physics_process(delta):
 	var isS = Input.is_physical_key_pressed(KEY_S)
 	var isA = Input.is_physical_key_pressed(KEY_A)
 	var isD = Input.is_physical_key_pressed(KEY_D)
+	var isG = Input.is_physical_key_pressed(KEY_G)
+	
+	if(isG):
+		isBouncing = false
+	
+	
 	var yVel = self.get_linear_velocity().y
 	invdirection = direction * -1
 	print(direction)
@@ -84,7 +90,7 @@ func _physics_process(delta):
 	if(self.get_linear_velocity().x > 0):
 		direction = 1;
 	
-	elif(self.get_linear_velocity().x > 0): 
+	elif(self.get_linear_velocity().x < 0): 
 		direction = -1;
 	
 	else:
