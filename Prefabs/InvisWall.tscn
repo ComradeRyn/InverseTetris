@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b07jom3veqec6"]
+
+[ext_resource type="Script" path="res://Prefabs/InvisWall.gd" id="1_pfnwa"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o8rvb"]
+friction = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jllej"]
+size = Vector2(20, 420)
+
+[node name="InvisWall" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_o8rvb")
+sleeping = true
+lock_rotation = true
+freeze = true
+script = ExtResource("1_pfnwa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+shape = SubResource("RectangleShape2D_jllej")

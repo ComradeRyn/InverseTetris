@@ -1,7 +1,7 @@
 extends RigidBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 200.0
+const JUMP_VELOCITY = -300.0
 var direction = 0
 var invdirection = direction * -1
 var isDashing = false
@@ -20,7 +20,9 @@ func _ready():
 
 func _on_body_entered(body):
 	var getType = body.get_meta("type") # get the type of myNode
-	isJumping = false;
+	if (getType != "invisWall"):
+		isJumping = false;
+		isBouncing = false;
 	print(getType)
 	if(getType != "grid" && (isDashing)):
 		isBouncing = true
