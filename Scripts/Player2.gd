@@ -18,9 +18,8 @@ func _ready():
 func _on_body_entered(body):
 	isJumping = false;
 	justJumped = false;
-	var getType = body.get_meta("type")
-	print(getType)    # get the type of myNode
-	if(getType != "grid" && (isDashing)):
+	var getType = body.get_meta("type")    # get the type of myNode
+	if(getType == "block" && (isDashing)):
 		body.apply_central_impulse(Vector2(100,0))
 		self.apply_central_impulse(Vector2(-100,0))
 		print("sus")
