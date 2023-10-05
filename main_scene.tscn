@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b07jom3veqec6" path="res://Prefabs/InvisWall.tscn" id="1_yhlrh"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_yepoe"]
 [ext_resource type="PackedScene" uid="uid://dmc4oksxm61x" path="res://Prefabs/MoveableBlock.tscn" id="4_6f5tb"]
-[ext_resource type="PackedScene" path="res://Prefabs/I-Block.tscn" id="5_ln5c7"]
+[ext_resource type="PackedScene" uid="uid://dju14nvribys5" path="res://Prefabs/I-Block.tscn" id="5_ln5c7"]
 [ext_resource type="Script" path="res://Scripts/Spawner.gd" id="6_2heko"]
 [ext_resource type="Texture2D" uid="uid://beve8fypwyp22" path="res://Sprites/Tile.png" id="6_60w08"]
 [ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/Player.tscn" id="6_hou6m"]

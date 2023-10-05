@@ -24,13 +24,14 @@ func _on_body_entered(body):
 		isJumping = false;
 		isBouncing = false;
 	print(getType)
-	if(getType != "grid" && (isDashing)):
+	if(getType != "grid" && (isDashing)): # Will change this to only happen when colliding with players
 		isBouncing = true
 		body.apply_central_impulse(Vector2(300 * direction,0))
+		# body.isBouncing = true;
 		self.apply_central_impulse(Vector2(300 * 2 * invdirection,0))
 		print("sus")
 		
-	isDashing = false;
+	#isDashing = false;
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
