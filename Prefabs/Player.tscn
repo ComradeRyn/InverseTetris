@@ -1,7 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dv08usgmi7ngg"]
+[gd_scene load_steps=17 format=3 uid="uid://dv08usgmi7ngg"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_upd2l"]
 [ext_resource type="Texture2D" uid="uid://b5jsnu4hcsxti" path="res://Sprites/Player/Player.png" id="2_2kwn0"]
+[ext_resource type="AudioStream" uid="uid://bvs76woxo8eqk" path="res://Audio/boing.mp3" id="3_4bn1d"]
+[ext_resource type="AudioStream" uid="uid://c5tu8hltvk4qa" path="res://Audio/whoosh.mp3" id="4_pol1q"]
+[ext_resource type="AudioStream" uid="uid://bsekaxbnai6x" path="res://Audio/bonk.mp3" id="5_6ha87"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g1u81"]
 radius = 9.5
@@ -94,5 +97,14 @@ shape = SubResource("CircleShape2D_g1u81")
 scale = Vector2(1.65625, 1.65625)
 sprite_frames = SubResource("SpriteFrames_2ajw0")
 animation = &"Idle"
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4bn1d")
+
+[node name="dash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pol1q")
+
+[node name="bounce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6ha87")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

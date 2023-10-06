@@ -29,6 +29,7 @@ func _on_body_entered(body):
 		body.apply_central_impulse(Vector2(300 * direction,0))
 		# body.isBouncing = true;
 		self.apply_central_impulse(Vector2(300 * 2 * invdirection,0))
+		$bounce.play()
 		print("sus")
 		
 	#isDashing = false;
@@ -59,6 +60,7 @@ func _physics_process(delta):
 	#	justJumped = true;
 		yVel = -400
 		self.apply_central_impulse(Vector2(0, yVel))
+		$jump.play()
 		
 	
 	#Left and right movement controls
@@ -78,11 +80,13 @@ func _physics_process(delta):
 	if isS && isD && !isDashing && !isBouncing:
 		isDashing = true
 		self.apply_central_impulse(Vector2(SPEED * 1.2,0))
+		$dash.play()
 	
 	elif isS && isA && !isDashing:
 		isDashing = true
 		temp = -SPEED * 1.5
 		self.apply_central_impulse(Vector2(-SPEED * 1.2,0))
+		$dash.play()
 	
 	#Dash check to allow dashing again
 	if(isDashing && (self.get_linear_velocity().x < 10 && self.get_linear_velocity().x > -10)):
