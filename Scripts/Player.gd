@@ -2,13 +2,16 @@ extends RigidBody2D
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
+
 var direction = 0
-var invdirection = direction * -1
-var isDashing = false
 var yVel = 0;
-var isJumping = false
 var temp = 0;
+
+var isDashing = false
+var dashCoolingdown = false
+var isJumping = false
 var isBouncing = false
+
 @onready var anim = get_node("PlayerAnim")
 
 # Called when the node enters the scene tree for the first time.
@@ -26,9 +29,10 @@ func _on_body_entered(body):
 	print(getType)
 	if(getType != "grid" && (isDashing)): # Will change this to only happen when colliding with players
 		isBouncing = true
+		isDashing = false
 		body.apply_central_impulse(Vector2(300 * direction,0))
 		# body.isBouncing = true;
-		self.apply_central_impulse(Vector2(300 * 2 * invdirection,0))
+		self.apply_central_impulse(Vector2(300 * -direction,0))
 		print("sus")
 		
 	#isDashing = false;
@@ -41,15 +45,9 @@ func _physics_process(delta):
 	var isS = Input.is_action_just_pressed("dash")
 	var isA = Input.is_action_pressed("move_left")
 	var isD = Input.is_action_pressed("move_right")
-	var isG = Input.is_physical_key_pressed(KEY_G)
-
-	
-	if(isG):
-		isBouncing = false
-	
+	#var isG = Input.is_physical_key_pressed(KEY_G)
 	
 	var yVel = self.get_linear_velocity().y
-	invdirection = direction * -1
 	print(isDashing)
 	
 	#print(isJumping)
@@ -62,12 +60,13 @@ func _physics_process(delta):
 		
 	
 	#Left and right movement controls
-	if isD && !isDashing && !isBouncing:
+	
+	if isD && !isA && !isDashing && !isBouncing:
 		anim.play("Run")
 		temp = SPEED
 		self.set_linear_velocity(Vector2(SPEED, yVel))
 		
-	elif isA && !isDashing && !isBouncing:
+	elif isA && !isD && !isDashing && !isBouncing:
 		anim.play("Run")
 		temp = -SPEED
 		self.set_linear_velocity(Vector2(-SPEED,yVel))
@@ -77,11 +76,12 @@ func _physics_process(delta):
 	#Dashing Controls
 	if isS && isD && !isDashing && !isBouncing:
 		isDashing = true
+		dashCoolingdown = true
 		self.apply_central_impulse(Vector2(SPEED * 1.2,0))
 	
-	elif isS && isA && !isDashing:
+	elif isS && isA && !isDashing && !isBouncing:
 		isDashing = true
-		temp = -SPEED * 1.5
+		dashCoolingdown = true
 		self.apply_central_impulse(Vector2(-SPEED * 1.2,0))
 	
 	#Dash check to allow dashing again
@@ -98,9 +98,9 @@ func _physics_process(delta):
 		direction = 0;
 	
 	if(isBouncing):
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
 		isBouncing = false
 		
-
-
-
+	if(isDashing):
+		await get_tree().create_timer(0.5).timeout
+		dashCoolingdown = false
