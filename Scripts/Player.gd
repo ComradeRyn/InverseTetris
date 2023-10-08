@@ -50,11 +50,11 @@ func _physics_process(delta):
 	
 	var yVel = self.get_linear_velocity().y
 	invdirection = direction * -1
-	print(direction)
+	print(isDashing)
 	
 	#print(isJumping)
 	# Handle Jump.
-	if (isW && !isJumping && yVel <= 0):
+	if (isW && !isJumping && yVel <= 10):
 		isJumping = true;
 	#	justJumped = true;
 		yVel = -400
