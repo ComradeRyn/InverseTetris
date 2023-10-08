@@ -54,7 +54,7 @@ func _physics_process(delta):
 	
 	#print(isJumping)
 	# Handle Jump.
-	if (isW && !isJumping):
+	if (isW && !isJumping && yVel <= 0):
 		isJumping = true;
 	#	justJumped = true;
 		yVel = -400
