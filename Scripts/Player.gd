@@ -37,10 +37,10 @@ func _on_body_entered(body):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _physics_process(delta):
-	var isW = Input.is_physical_key_pressed(KEY_W)
-	var isS = Input.is_physical_key_pressed(KEY_S)
-	var isA = Input.is_physical_key_pressed(KEY_A)
-	var isD = Input.is_physical_key_pressed(KEY_D)
+	var isW = Input.is_action_pressed("jump")
+	var isS = Input.is_action_just_pressed("dash")
+	var isA = Input.is_action_pressed("move_left")
+	var isD = Input.is_action_pressed("move_right")
 	var isG = Input.is_physical_key_pressed(KEY_G)
 
 	
