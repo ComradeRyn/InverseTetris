@@ -88,14 +88,7 @@ func _physics_process(delta):
 	if(isDashing && (self.get_linear_velocity().x < 10 && self.get_linear_velocity().x > -10)):
 		isDashing = false
 	
-	if(self.get_linear_velocity().x > 0):
-		direction = 1;
-	
-	elif(self.get_linear_velocity().x < 0): 
-		direction = -1;
-	
-	else:
-		direction = 0;
+	direction = getDirection()
 	
 	if(isBouncing):
 		await get_tree().create_timer(0.5).timeout
@@ -104,3 +97,15 @@ func _physics_process(delta):
 	if(isDashing):
 		await get_tree().create_timer(0.5).timeout
 		dashCoolingdown = false
+
+func getDirection():
+	var d
+	if(self.get_linear_velocity().x > 0):
+		d = 1;
+	
+	elif(self.get_linear_velocity().x < 0): 
+		d = -1;
+	
+	else:
+		d = 0;
+	return d
