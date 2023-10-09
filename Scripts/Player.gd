@@ -23,8 +23,7 @@ func _on_body_entered(body):
 	var getType = body.get_meta("type") # get the type of myNode
 	if (getType != "invisWall"):
 		isJumping = false;
-	print(get_linear_velocity().x)
-	if(getType != "grid" && (isDashing) && get_linear_velocity().x < 20 && get_linear_velocity().x > -20): # Will change this to only happen when colliding with players
+	if(getType != "grid" && (isDashing) && get_linear_velocity().x < 20 && get_linear_velocity().x > -20):
 		isStunned = true
 		isDashing = false
 		body.apply_central_impulse(Vector2(SPEED * 2 * direction,0))
