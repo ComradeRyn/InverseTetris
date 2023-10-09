@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b07jom3veqec6"]
 
-[ext_resource type="Script" path="res://Prefabs/InvisWall.gd" id="1_pfnwa"]
+[ext_resource type="Script" path="res://Scripts/InvisWall.gd" id="1_pfnwa"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o8rvb"]
 friction = 0.0

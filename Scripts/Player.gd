@@ -9,6 +9,7 @@ var yVel = 0;
 var isJumping = false
 var temp = 0;
 var isBouncing = false
+var getHitBox
 @onready var anim = get_node("PlayerAnim")
 
 # Called when the node enters the scene tree for the first time.
@@ -23,16 +24,20 @@ func _on_body_entered(body):
 	if (getType != "invisWall"):
 		isJumping = false;
 		isBouncing = false;
-	print(getType)
+
 	if(getType != "grid" && (isDashing)): # Will change this to only happen when colliding with players
 		isBouncing = true
 		body.apply_central_impulse(Vector2(300 * direction,0))
 		# body.isBouncing = true;
 		self.apply_central_impulse(Vector2(300 * 2 * invdirection,0))
-		print("sus")
+
 		
 	#isDashing = false;
 
+func _on_hurtbox_area_entered(area):
+	getHitBox = area.get_meta("hitbox")
+	if(getHitBox == "block"):
+		self.queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
@@ -50,7 +55,7 @@ func _physics_process(delta):
 	
 	var yVel = self.get_linear_velocity().y
 	invdirection = direction * -1
-	print(isDashing)
+	#print(isDashing)
 	
 	#print(isJumping)
 	# Handle Jump.
@@ -100,7 +105,4 @@ func _physics_process(delta):
 	if(isBouncing):
 		await get_tree().create_timer(1).timeout
 		isBouncing = false
-		
-
-
-
+	
