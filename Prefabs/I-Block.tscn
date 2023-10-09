@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dju14nvribys5"]
+[gd_scene load_steps=5 format=3 uid="uid://dju14nvribys5"]
 
 [ext_resource type="Texture2D" uid="uid://16i1cqcp7g37" path="res://Sprites/I-block.png" id="1_psyrq"]
+[ext_resource type="Script" path="res://Scripts/iblockHitBox.gd" id="3_qbuws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbfpy"]
 size = Vector2(16, 4)
 
-[node name="I-block" type="RigidBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awit5"]
+size = Vector2(82, 22)
+
+[node name="Iblock" type="RigidBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
@@ -17,3 +21,16 @@ region_rect = Rect2(0, 0, 16, 16)
 position = Vector2(0, -10)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_dbfpy")
+
+[node name="hitBox" type="Area2D" parent="."]
+script = ExtResource("3_qbuws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_awit5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="hitBox" method="_on_iblock_body_entered"]
+[connection signal="area_entered" from="hitBox" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="hitBox" to="hitBox" method="_on_area_entered"]
+[connection signal="body_entered" from="hitBox" to="." method="_on_area_2d_body_entered"]

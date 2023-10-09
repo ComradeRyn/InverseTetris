@@ -31,6 +31,10 @@ func _on_body_entered(body):
 		
 	#isDashing = false;
 
+func _on_hurtbox_area_entered(area):
+	getHitBox = area.get_meta("hitbox")
+	if(getHitBox == "block"):
+		self.queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
