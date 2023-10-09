@@ -31,7 +31,7 @@ func _on_body_entered(body):
 		
 	#isDashing = false;
 
-func _on_hurtbox_area_entered(area):
+func _on_hurtbox_area_entered(area): # checks to see if the hitbox intercets a hurtbox and kills the player
 	var getHitBox = area.get_meta("hitbox")
 	if(getHitBox == "block"):
 		self.queue_free()
