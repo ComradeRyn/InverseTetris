@@ -23,11 +23,29 @@ func _on_body_entered(body):
 	var getType = body.get_meta("type") # get the type of myNode
 	if (getType != "invisWall"):
 		isJumping = false;
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+		isBouncing = false;
+	print(getType)
+	if(getType != "grid" && (isDashing)): # Will change this to only happen when colliding with players
+		isBouncing = true
+		body.apply_central_impulse(Vector2(300 * direction,0))
+		# body.isBouncing = true;
+		self.apply_central_impulse(Vector2(300 * 2 * invdirection,0))
+		$bounce.play()
+		print("sus")
+=======
+>>>>>>> Stashed changes
 	if(getType != "grid" && (isDashing) && get_linear_velocity().x < 20 && get_linear_velocity().x > -20):
 		isStunned = true
 		isDashing = false
 		body.apply_central_impulse(Vector2(SPEED * 2 * direction,0))
 		self.apply_central_impulse(Vector2(SPEED * 2 * -direction,0))
+<<<<<<< Updated upstream
+=======
+>>>>>>> 5cbc8674e6d6a594c010c4b51b7073fc906d2bb4
+>>>>>>> Stashed changes
 		
 	#isDashing = false;
 
@@ -49,6 +67,7 @@ func _physics_process(delta):
 		isJumping = true
 		yVel = -400
 		self.apply_central_impulse(Vector2(0, yVel))
+		$jump.play()
 		
 	if isD && !isA && !isDashing && !isStunned: #Move Right
 		anim.play("Run")
@@ -65,11 +84,13 @@ func _physics_process(delta):
 		isDashing = true
 		dashCoolingdown = true
 		self.apply_central_impulse(Vector2(SPEED * 1.2,0))
+		$dash.play()
 	
 	elif isS && isA && !isDashing && !isStunned:
 		isDashing = true
 		dashCoolingdown = true
 		self.apply_central_impulse(Vector2(-SPEED * 1.2,0))
+		$dash.play()
 	
 	#Dash check to allow dashing again
 	if(isDashing && (self.get_linear_velocity().x < 100 && self.get_linear_velocity().x > -100)):

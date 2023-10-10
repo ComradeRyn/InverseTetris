@@ -1,8 +1,26 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=16 format=3 uid="uid://dv08usgmi7ngg"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_upd2l"]
 [ext_resource type="Texture2D" uid="uid://b5jsnu4hcsxti" path="res://Sprites/Player/Player.png" id="2_2kwn0"]
 [ext_resource type="Script" path="res://Scripts/playerHurtbox.gd" id="3_xqf08"]
+=======
+<<<<<<< HEAD
+[gd_scene load_steps=17 format=3 uid="uid://dv08usgmi7ngg"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_upd2l"]
+[ext_resource type="Texture2D" uid="uid://b5jsnu4hcsxti" path="res://Sprites/Player/Player.png" id="2_2kwn0"]
+[ext_resource type="AudioStream" uid="uid://bvs76woxo8eqk" path="res://Audio/boing.mp3" id="3_4bn1d"]
+[ext_resource type="AudioStream" uid="uid://c5tu8hltvk4qa" path="res://Audio/whoosh.mp3" id="4_pol1q"]
+[ext_resource type="AudioStream" uid="uid://bsekaxbnai6x" path="res://Audio/bonk.mp3" id="5_6ha87"]
+=======
+[gd_scene load_steps=16 format=3 uid="uid://dv08usgmi7ngg"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_upd2l"]
+[ext_resource type="Texture2D" uid="uid://b5jsnu4hcsxti" path="res://Sprites/Player/Player.png" id="2_2kwn0"]
+[ext_resource type="Script" path="res://Scripts/playerHurtbox.gd" id="3_xqf08"]
+>>>>>>> 5cbc8674e6d6a594c010c4b51b7073fc906d2bb4
+>>>>>>> Stashed changes
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g1u81"]
 radius = 9.5
@@ -100,6 +118,19 @@ scale = Vector2(1.65625, 1.65625)
 sprite_frames = SubResource("SpriteFrames_2ajw0")
 animation = &"Idle"
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4bn1d")
+
+[node name="dash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pol1q")
+
+[node name="bounce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6ha87")
+=======
+>>>>>>> Stashed changes
 [node name="Hurtbox" type="Area2D" parent="."]
 script = ExtResource("3_xqf08")
 
@@ -108,6 +139,10 @@ position = Vector2(0, 1)
 shape = SubResource("SegmentShape2D_t8exn")
 one_way_collision_margin = 0.0
 debug_color = Color(0.836122, 0.0505172, 0.0285799, 0.42)
+<<<<<<< Updated upstream
+=======
+>>>>>>> 5cbc8674e6d6a594c010c4b51b7073fc906d2bb4
+>>>>>>> Stashed changes
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
