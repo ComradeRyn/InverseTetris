@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dju14nvribys5"]
+[gd_scene load_steps=6 format=3 uid="uid://dju14nvribys5"]
 
 [ext_resource type="Texture2D" uid="uid://16i1cqcp7g37" path="res://Sprites/I-block.png" id="1_psyrq"]
+[ext_resource type="AudioStream" uid="uid://cl3alqk411k78" path="res://Audio/Boom.mp3" id="3_n6fba"]
 [ext_resource type="Script" path="res://Scripts/iblockHitBox.gd" id="3_qbuws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbfpy"]
@@ -28,6 +29,10 @@ script = ExtResource("3_qbuws")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_awit5")
+
+[node name="death" type="AudioStreamPlayer" parent="hitBox"]
+stream = ExtResource("3_n6fba")
+volume_db = 24.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="hitBox" method="_on_iblock_body_entered"]
