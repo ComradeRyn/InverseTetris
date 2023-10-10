@@ -1,9 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://dv08usgmi7ngg"]
+[gd_scene load_steps=19 format=3 uid="uid://dv08usgmi7ngg"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_upd2l"]
 [ext_resource type="Texture2D" uid="uid://b5jsnu4hcsxti" path="res://Sprites/Player/Player.png" id="2_2kwn0"]
-[ext_resource type="Script" path="res://Scripts/playerHurtbox.gd" id="3_xqf08"]
 [ext_resource type="AudioStream" uid="uid://bvs76woxo8eqk" path="res://Audio/boing.mp3" id="3_4bn1d"]
+[ext_resource type="Script" path="res://Scripts/playerHurtbox.gd" id="3_xqf08"]
 [ext_resource type="AudioStream" uid="uid://c5tu8hltvk4qa" path="res://Audio/whoosh.mp3" id="4_pol1q"]
 [ext_resource type="AudioStream" uid="uid://bsekaxbnai6x" path="res://Audio/bonk.mp3" id="5_6ha87"]
 
