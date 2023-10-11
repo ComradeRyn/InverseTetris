@@ -32,7 +32,6 @@ shape = SubResource("RectangleShape2D_awit5")
 
 [node name="death" type="AudioStreamPlayer" parent="hitBox"]
 stream = ExtResource("3_n6fba")
-volume_db = 24.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="hitBox" method="_on_iblock_body_entered"]
