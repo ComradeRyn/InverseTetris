@@ -15,5 +15,6 @@ func _process(delta):
 func _on_area_entered(area):
 	getHurt = area.get_meta("hitbox")
 	if(getHurt != "player"):
-		self.set_deferred("monitorable", false) 
+		self.set_deferred("monitorable", false)
+	if(getHurt == "player"):
 		$death.play()
