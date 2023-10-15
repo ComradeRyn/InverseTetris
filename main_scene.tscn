@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcyrh64ps6j3v"]
+[gd_scene load_steps=12 format=3 uid="uid://dcyrh64ps6j3v"]
 
 [ext_resource type="PackedScene" uid="uid://b07jom3veqec6" path="res://Prefabs/InvisWall.tscn" id="1_yhlrh"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_yepoe"]
-[ext_resource type="PackedScene" uid="uid://dju14nvribys5" path="res://Prefabs/I-Block.tscn" id="5_ln5c7"]
 [ext_resource type="Script" path="res://Scripts/Spawner.gd" id="6_2heko"]
 [ext_resource type="Texture2D" uid="uid://beve8fypwyp22" path="res://Sprites/Tile.png" id="6_60w08"]
 [ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/Player.tscn" id="6_hou6m"]
 [ext_resource type="Script" path="res://Scripts/tileMapHitBox.gd" id="8_jchxc"]
+[ext_resource type="PackedScene" uid="uid://c7mmdas1cnnny" path="res://Prefabs/Player3.tscn" id="8_ns2xt"]
 [ext_resource type="PackedScene" uid="uid://ee7hnq5q0rd4" path="res://Prefabs/Player2.tscn" id="8_sbu4i"]
+[ext_resource type="PackedScene" uid="uid://die5x6dp03xno" path="res://Prefabs/Player4.tscn" id="9_6qhhv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m5dld"]
 texture = ExtResource("6_60w08")
@@ -28,19 +29,9 @@ sources/0 = SubResource("TileSetAtlasSource_m5dld")
 position = Vector2(0, -190)
 zoom = Vector2(1.5, 1.5)
 
-[node name="I-block" parent="." instance=ExtResource("5_ln5c7")]
-position = Vector2(-121, -367)
-
 [node name="Spawner" type="Node2D" parent="."]
 position = Vector2(0, -406)
 script = ExtResource("6_2heko")
-
-[node name="Player" parent="." instance=ExtResource("6_hou6m")]
-position = Vector2(0, -10)
-jump = "jump1"
-dash = "dash1"
-move_right = "move_right1"
-move_left = "move_left1"
 
 [node name="InvisWall2" parent="." instance=ExtResource("1_yhlrh")]
 position = Vector2(207, -192)
@@ -61,5 +52,32 @@ script = ExtResource("8_jchxc")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/Area2D"]
 polygon = PackedVector2Array(10.8, -0.4, 39.2, 0, 39.2, -80.4, 44.4, -80.2, 44.2, 3.6, -44.4, 4, -44, -80.8, -39.2, -80.6, -39.2, -0.4)
 
-[node name="Player2" parent="." instance=ExtResource("8_sbu4i")]
-position = Vector2(40, -15)
+[node name="Players" type="Node2D" parent="."]
+
+[node name="Player" parent="Players" instance=ExtResource("6_hou6m")]
+position = Vector2(-150, -10)
+keyboard_jump = "jump1"
+keyboard_dash = "dash1"
+keyboard_right = "right1"
+keyboard_left = "left1"
+
+[node name="Player2" parent="Players" instance=ExtResource("8_sbu4i")]
+position = Vector2(-50, -10)
+keyboard_jump = "jump2"
+keyboard_dash = "dash2"
+keyboard_right = "right2"
+keyboard_left = "left2"
+
+[node name="Player3" parent="Players" instance=ExtResource("8_ns2xt")]
+position = Vector2(50, -10)
+keyboard_jump = "Controller3_Jump"
+keyboard_dash = "Controller3_Dash"
+keyboard_right = "Controller3_Right"
+keyboard_left = "Controller3_Left"
+
+[node name="Player4" parent="Players" instance=ExtResource("9_6qhhv")]
+position = Vector2(150, -9)
+keyboard_jump = "Controller4_Jump"
+keyboard_dash = "Controller4_Dash"
+keyboard_right = "Controller4_Right"
+keyboard_left = "Controller4_Left"

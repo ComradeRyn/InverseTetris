@@ -4,7 +4,3 @@
 
 [node name="Player" instance=ExtResource("1_756gl")]
 modulate = Color(0.894118, 0.721569, 0, 1)
-jump = "jump2"
-dash = "dash2"
-move_right = "move_right2"
-move_left = "move_left2"

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://die5x6dp03xno"]
+
+[ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/Player.tscn" id="1_o6jcf"]
+
+[node name="Player" instance=ExtResource("1_o6jcf")]
+modulate = Color(1, 0.317647, 0, 1)

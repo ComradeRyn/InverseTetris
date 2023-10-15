@@ -10,10 +10,15 @@ var dashCoolingdown = false
 var isJumping = false
 var isStunned = false
 
-@export var jump : String
-@export var dash : String
-@export var move_right : String
-@export var move_left : String
+@export var keyboard_jump : String
+@export var keyboard_dash : String
+@export var keyboard_right : String
+@export var keyboard_left : String
+
+@export var controller_jump : String
+@export var controller_dash : String
+@export var controller_right : String
+@export var controller_left : String
 
 @onready var anim = get_node("PlayerAnim")
 
@@ -48,10 +53,10 @@ func _on_hurtbox_area_entered(area): # checks to see if the hitbox intercets a h
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _physics_process(delta):
-	var isW = Input.is_action_pressed(jump)
-	var isS = Input.is_action_just_pressed(dash)
-	var isA = Input.is_action_pressed(move_left)
-	var isD = Input.is_action_pressed(move_right)
+	var isW = Input.is_action_pressed(keyboard_jump)
+	var isS = Input.is_action_just_pressed(keyboard_dash)
+	var isA = Input.is_action_pressed(keyboard_left)
+	var isD = Input.is_action_pressed(keyboard_right)
 	var yVel = self.get_linear_velocity().y
 	
 	if (isW && !isJumping && yVel <= 10): #Jumping
