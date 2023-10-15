@@ -10,6 +10,11 @@ var dashCoolingdown = false
 var isJumping = false
 var isStunned = false
 
+@export var jump : String
+@export var dash : String
+@export var move_right : String
+@export var move_left : String
+
 @onready var anim = get_node("PlayerAnim")
 
 # Called when the node enters the scene tree for the first time.
@@ -24,10 +29,10 @@ func _on_body_entered(body):
 	if (getType != "invisWall"):
 		isJumping = false;
 
-	if(getType != "grid" && (isDashing) && get_linear_velocity().x < 20 && get_linear_velocity().x > -20):
+	if(getType != "grid" && isDashing): # && get_linear_velocity().x < 20 && get_linear_velocity().x > -20
 		isStunned = true
 		isDashing = false
-		body.apply_central_impulse(Vector2(SPEED * 2 * direction,0))
+		body.apply_central_impulse(Vector2(SPEED * direction,0))
 		self.apply_central_impulse(Vector2(SPEED * 2 * -direction,0))
 		$bounce.play()
 
@@ -43,10 +48,10 @@ func _on_hurtbox_area_entered(area): # checks to see if the hitbox intercets a h
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _physics_process(delta):
-	var isW = Input.is_action_pressed("jump")
-	var isS = Input.is_action_just_pressed("dash")
-	var isA = Input.is_action_pressed("move_left")
-	var isD = Input.is_action_pressed("move_right")
+	var isW = Input.is_action_pressed(jump)
+	var isS = Input.is_action_just_pressed(dash)
+	var isA = Input.is_action_pressed(move_left)
+	var isD = Input.is_action_pressed(move_right)
 	var yVel = self.get_linear_velocity().y
 	
 	if (isW && !isJumping && yVel <= 10): #Jumping
@@ -85,7 +90,7 @@ func _physics_process(delta):
 	direction = getDirection()
 	
 	if(isStunned):
-		await get_tree().create_timer(0.25).timeout
+		await get_tree().create_timer(0.5).timeout
 		isStunned = false
 		
 	if(isDashing):

@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://b07jom3veqec6" path="res://Prefabs/InvisWall.tscn" id="1_yhlrh"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_yepoe"]
-[ext_resource type="PackedScene" uid="uid://dmc4oksxm61x" path="res://Prefabs/MoveableBlock.tscn" id="4_6f5tb"]
 [ext_resource type="PackedScene" uid="uid://dju14nvribys5" path="res://Prefabs/I-Block.tscn" id="5_ln5c7"]
 [ext_resource type="Script" path="res://Scripts/Spawner.gd" id="6_2heko"]
 [ext_resource type="Texture2D" uid="uid://beve8fypwyp22" path="res://Sprites/Tile.png" id="6_60w08"]
 [ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/Player.tscn" id="6_hou6m"]
 [ext_resource type="Script" path="res://Scripts/tileMapHitBox.gd" id="8_jchxc"]
+[ext_resource type="PackedScene" uid="uid://ee7hnq5q0rd4" path="res://Prefabs/Player2.tscn" id="8_sbu4i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m5dld"]
 texture = ExtResource("6_60w08")
@@ -28,9 +28,6 @@ sources/0 = SubResource("TileSetAtlasSource_m5dld")
 position = Vector2(0, -190)
 zoom = Vector2(1.5, 1.5)
 
-[node name="Block" parent="." instance=ExtResource("4_6f5tb")]
-position = Vector2(167, -25)
-
 [node name="I-block" parent="." instance=ExtResource("5_ln5c7")]
 position = Vector2(-121, -367)
 
@@ -40,6 +37,10 @@ script = ExtResource("6_2heko")
 
 [node name="Player" parent="." instance=ExtResource("6_hou6m")]
 position = Vector2(0, -10)
+jump = "jump1"
+dash = "dash1"
+move_right = "move_right1"
+move_left = "move_left1"
 
 [node name="InvisWall2" parent="." instance=ExtResource("1_yhlrh")]
 position = Vector2(207, -192)
@@ -59,3 +60,6 @@ script = ExtResource("8_jchxc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/Area2D"]
 polygon = PackedVector2Array(10.8, -0.4, 39.2, 0, 39.2, -80.4, 44.4, -80.2, 44.2, 3.6, -44.4, 4, -44, -80.8, -39.2, -80.6, -39.2, -0.4)
+
+[node name="Player2" parent="." instance=ExtResource("8_sbu4i")]
+position = Vector2(40, -15)

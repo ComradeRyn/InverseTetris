@@ -7,8 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bsekaxbnai6x" path="res://Audio/bonk.mp3" id="5_6ha87"]
 [ext_resource type="AudioStream" uid="uid://cl3alqk411k78" path="res://Audio/Boom.mp3" id="7_pjfd8"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g1u81"]
-radius = 9.5
+[sub_resource type="CircleShape2D" id="CircleShape2D_moaj7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oquob"]
 atlas = ExtResource("2_2kwn0")
@@ -96,12 +95,12 @@ contact_monitor = true
 script = ExtResource("1_upd2l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_g1u81")
+shape = SubResource("CircleShape2D_moaj7")
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.65625, 1.65625)
 sprite_frames = SubResource("SpriteFrames_2ajw0")
-animation = &"Idle"
+animation = &"Run"
 
 [node name="Hurtbox" type="Area2D" parent="."]
 script = ExtResource("3_xqf08")
