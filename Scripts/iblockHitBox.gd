@@ -1,6 +1,6 @@
 extends Area2D
 
-var getHurt
+var body
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,8 +13,8 @@ func _process(delta):
 	pass
 
 func _on_area_entered(area):
-	getHurt = area.get_meta("hitbox")
-	if(getHurt != "player"):
+	body = area.get_meta("hitbox")
+	if(body != "player"):
 		self.set_deferred("monitorable", false)
-	elif(getHurt == "player" && self.monitorable):
+	elif(body == "player" && self.monitorable):
 		$death.play()
