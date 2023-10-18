@@ -3,6 +3,8 @@ extends Node2D
 var block
 var spawnBlock = false
 var spawnRate = 1
+var upper = 155
+var lower = -155
 
 func _ready(): #Waits before spawning first block
 	await get_tree().create_timer(spawnRate).timeout
@@ -13,6 +15,7 @@ func _process(delta):
 	if(spawnBlock): 
 		block = preload("res://Prefabs/I-Block.tscn").instantiate() #Replace with method that picks random location to spawn block
 		add_child(block)
+		block.set_position(Vector2(randi_range(lower, upper), 0)) #puts the position 
 		spawnBlock = false
 		$place.play()
 		await get_tree().create_timer(spawnRate).timeout
