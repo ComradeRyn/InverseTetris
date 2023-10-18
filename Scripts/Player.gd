@@ -34,13 +34,22 @@ func _on_body_entered(body):
 	if (getType != "invisWall"):
 		isJumping = false;
 
-	if(getType != "grid" && isDashing): # && get_linear_velocity().x < 20 && get_linear_velocity().x > -20
+	if(getType != "grid" && isDashing && getType != "player"): # && get_linear_velocity().x < 20 && get_linear_velocity().x > -20
 		isStunned = true
 		isDashing = false
 		body.apply_central_impulse(Vector2(SPEED * direction,0))
 		self.apply_central_impulse(Vector2(SPEED * 2 * -direction,0))
 		$bounce.play()
-
+	
+	if(getType == "player" && isDashing): # && get_linear_velocity().x < 20 && get_linear_velocity().x > -20
+		body.isStunned = true
+		isStunned = true
+		isDashing = false
+		body.apply_central_impulse(Vector2(SPEED * direction,0))
+		self.apply_central_impulse(Vector2(SPEED * 2 * -direction,0))
+		$bounce.play()
+		await get_tree().create_timer(0.25).timeout
+		isStunned = false
 		
 	#isDashing = false;
 
