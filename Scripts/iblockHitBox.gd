@@ -16,7 +16,6 @@ func _on_area_entered(area):
 	body = area.get_meta("hitbox")
 	if(body != "player"):
 		self.set_deferred("monitorable", false)
-		self.get_owner().set_freeze_mode(0) #freezes the block whenever it hits something that isnt the player
 	elif(body == "player" && self.monitorable):
 		$death.play()
 	await get_tree().create_timer(3).timeout
