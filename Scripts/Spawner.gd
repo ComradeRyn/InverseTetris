@@ -3,8 +3,8 @@ extends Node2D
 var block
 var spawnBlock = false
 var spawnRate = 1
-var upper = 160
-var lower = -160
+var upper = 155
+var lower = -155
 
 func _ready(): #Waits before spawning first block
 	await get_tree().create_timer(spawnRate).timeout
