@@ -18,5 +18,5 @@ func _on_area_entered(area):
 		self.set_deferred("monitorable", false)
 	elif(body == "player" && self.monitorable):
 		$death.play()
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(10).timeout
 	self.get_owner().queue_free()
