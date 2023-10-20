@@ -5,6 +5,7 @@ var spawnBlock = false
 var spawnRate = 1
 var upper = 155
 var lower = -155
+var decrementRate = 0.01
 
 func _ready(): #Waits before spawning first block
 	await get_tree().create_timer(spawnRate).timeout
@@ -21,3 +22,8 @@ func _process(delta):
 		await get_tree().create_timer(spawnRate).timeout
 		spawnBlock = true
 		
+	var decrementAmount = decrementRate * delta #spawner spawns blocks faster as time goes on
+	spawnRate -= decrementAmount
+	if spawnRate <= 0.1:
+		spawnRate = 0.1
+	print("Spawner Speed: ", spawnRate)

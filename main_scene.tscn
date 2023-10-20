@@ -27,7 +27,7 @@ sources/0 = SubResource("TileSetAtlasSource_m5dld")
 [node name="MainScene" type="Node2D"]
 
 [node name="Spawner" type="Node2D" parent="."]
-position = Vector2(2.08165e-12, -500)
+position = Vector2(2.08165e-12, -400)
 script = ExtResource("6_2heko")
 
 [node name="place" type="AudioStreamPlayer" parent="Spawner"]
@@ -52,7 +52,7 @@ script = ExtResource("2_yepoe")
 script = ExtResource("8_jchxc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/Area2D"]
-polygon = PackedVector2Array(0, 0, 39.6, 0, 39.6, -92, 44, -92, 44, 4, -44, 4, -44, -92, -39.6, -92, -39.6, 0)
+polygon = PackedVector2Array(39.6, 0, 39.6, -92, 44, -92, 44, 4, -44, 4, -44, -92, -39.6, -92, -39.6, 0)
 
 [node name="Players" type="Node2D" parent="."]
 
