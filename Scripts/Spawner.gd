@@ -5,7 +5,7 @@ var spawnBlock = false
 var spawnRate = 1
 var upper = 155
 var lower = -155
-var decrementRate = 0.01
+var decrementRate = .01
 
 func _ready(): #Waits before spawning first block
 	await get_tree().create_timer(spawnRate).timeout
