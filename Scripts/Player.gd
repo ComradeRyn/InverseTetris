@@ -34,6 +34,8 @@ func _on_body_entered(body):
 	var getType = body.get_meta("type") # get the type of myNode
 	if (getType != "invisWall" && !jumpCooldown):
 		grounded = true;
+	#if(getType == "block"):
+		#self.queue_free()
 
 	if(getType != "grid" && isDashing && getType != "player"): # && get_linear_velocity().x < 20 && get_linear_velocity().x > -20
 		isStunned = true
@@ -57,7 +59,6 @@ func _on_body_entered(body):
 func _on_hurtbox_area_entered(area): # checks to see if the hitbox intercets a hurtbox and kills the player
 	var getHitBox = area.get_meta("hitbox")
 	if(getHitBox == "block"):
-		$death.play()
 		self.queue_free() #kills player
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
