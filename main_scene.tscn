@@ -53,7 +53,7 @@ position = Vector2(0.400017, 0.2)
 script = ExtResource("8_jchxc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/Area2D"]
-polygon = PackedVector2Array(39.6, 0, 39.6, -92, 44, -92, 44, 4, -44, 4, -44, -92, -39.6, -92, -39.6, 0)
+polygon = PackedVector2Array(39.6, -0.2, 39.6, -92.2, 43.6, -92.2, 43.6, 3.8, -44.4, 3.8, -44.4, -92.2, -40.4, -92.2, -40.4, -0.2)
 
 [node name="Players" type="Node2D" parent="."]
 
