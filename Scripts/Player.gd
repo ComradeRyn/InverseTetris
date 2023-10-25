@@ -84,6 +84,7 @@ func _physics_process(delta):
 		
 	else: #Not Moving
 		anim.play("Idle")
+		self.set_linear_velocity(Vector2(0,yVel));
 		
 	if isS && isD && !isDashing && !isStunned:
 		isDashing = true
