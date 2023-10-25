@@ -7,7 +7,8 @@ var direction = 0
 
 var isDashing = false
 var dashCoolingdown = false
-var isJumping = false
+var grounded = true
+var jumpCooldown = false
 var isStunned = false
 
 @export var keyboard_jump : String
@@ -31,8 +32,8 @@ func _ready():
 
 func _on_body_entered(body):
 	var getType = body.get_meta("type") # get the type of myNode
-	if (getType != "invisWall"):
-		isJumping = false;
+	if (getType != "invisWall" && !jumpCooldown):
+		grounded = true;
 
 	if(getType != "grid" && isDashing && getType != "player"): # && get_linear_velocity().x < 20 && get_linear_velocity().x > -20
 		isStunned = true
@@ -68,8 +69,9 @@ func _physics_process(delta):
 	var isD = Input.is_action_pressed(keyboard_right)
 	var yVel = self.get_linear_velocity().y
 	
-	if (isW && !isJumping && yVel <= 10): #Jumping
-		isJumping = true
+	if (isW && grounded && !jumpCooldown): #Jumping
+		grounded = false;
+		jumpCooldown = true;
 		yVel = -400
 		self.apply_central_impulse(Vector2(0, yVel))
 		$jump.play()
@@ -112,6 +114,10 @@ func _physics_process(delta):
 	if(isDashing):
 		await get_tree().create_timer(0.5).timeout
 		dashCoolingdown = false
+		
+	if(jumpCooldown):
+		await get_tree().create_timer(0.25).timeout
+		jumpCooldown = false
 
 func getDirection(): #Gets the direction the player is moving in on the x-axis
 	var d

@@ -26,4 +26,3 @@ func _process(delta):
 	spawnRate -= decrementAmount
 	if spawnRate <= 0.1:
 		spawnRate = 0.1
-	print("Spawner Speed: ", spawnRate)
