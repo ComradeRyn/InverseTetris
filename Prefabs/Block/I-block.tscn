@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dhl7dumgkt64w"]
 
-[ext_resource type="Script" path="res://Scripts/Block.gd" id="1_imuoo"]
-[ext_resource type="Texture2D" uid="uid://16i1cqcp7g37" path="res://Sprites/I-block.png" id="1_psyrq"]
-[ext_resource type="AudioStream" uid="uid://cl3alqk411k78" path="res://Audio/Boom.mp3" id="3_n6fba"]
+[ext_resource type="Script" path="res://Scripts/Block.gd" id="1_15me4"]
+[ext_resource type="Texture2D" uid="uid://16i1cqcp7g37" path="res://Sprites/I-block.png" id="2_0yb7g"]
+[ext_resource type="AudioStream" uid="uid://cl3alqk411k78" path="res://Audio/Boom.mp3" id="3_grhcu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbfpy"]
 size = Vector2(16, 4)
@@ -12,17 +12,14 @@ size = Vector2(82, 22)
 
 [node name="Iblock" type="RigidBody2D"]
 mass = 50.0
-max_contacts_reported = 3
-contact_monitor = true
-sleeping = true
 lock_rotation = true
-script = ExtResource("1_imuoo")
+script = ExtResource("1_15me4")
 locationsDown = [-160, -96, -32, 32, 96, 160]
 locationsUp = [-180, -160, -140, -120, -100, -80, -60, -40, -20, 0, 20, 40, 60, 80, 100, 120, 140, 160, 180]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
-texture = ExtResource("1_psyrq")
+texture = ExtResource("2_0yb7g")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
@@ -38,7 +35,7 @@ position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_awit5")
 
 [node name="death" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_n6fba")
+stream = ExtResource("3_grhcu")
 volume_db = 0.405
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

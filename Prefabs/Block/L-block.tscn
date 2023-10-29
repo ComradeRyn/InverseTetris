@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgi2hcsr652t5"]
 
-[ext_resource type="Texture2D" uid="uid://dovuvhvi1ngkc" path="res://Sprites/Blocks.png" id="1_5vrri"]
-[ext_resource type="Script" path="res://Scripts/Block.gd" id="1_tbwly"]
+[ext_resource type="Script" path="res://Scripts/Block.gd" id="1_0qgrh"]
+[ext_resource type="Texture2D" uid="uid://dovuvhvi1ngkc" path="res://Sprites/Blocks.png" id="2_ejcni"]
 
-[node name="forwardL-block" type="RigidBody2D"]
-mass = 51.79
+[node name="L-block" type="RigidBody2D"]
+mass = 50.0
 lock_rotation = true
-script = ExtResource("1_tbwly")
+script = ExtResource("1_0qgrh")
 locationsDown = [-160, -100, -40, 20, 80, 140, 180]
 locationsUp = [-160, -120, -80, -40, 0, 40, 80, 120, 160, 180]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
-texture = ExtResource("1_5vrri")
+texture = ExtResource("2_ejcni")
 region_enabled = true
 region_rect = Rect2(32, 0, 16, 16)
 
