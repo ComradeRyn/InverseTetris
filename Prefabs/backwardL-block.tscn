@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgut2e8g0lb5x"]
+
+[ext_resource type="Texture2D" uid="uid://dovuvhvi1ngkc" path="res://Sprites/Blocks.png" id="1_707aw"]
+[ext_resource type="Script" path="res://Scripts/Block.gd" id="1_apmha"]
+
+[node name="backwardL-block" type="RigidBody2D"]
+lock_rotation = true
+script = ExtResource("1_apmha")
+locationsDown = [-160, -100, -40, 20, 80, 140, 180]
+locationsUp = [-160, -120, -80, -40, 0, 40, 80, 120, 160, 180]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_707aw")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-40, 0, 20, 0, 20, -20, -20, -20, -20, -40, -40, -40)
