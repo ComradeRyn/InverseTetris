@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dju14nvribys5"]
+[gd_scene load_steps=7 format=3 uid="uid://dju14nvribys5"]
 
+[ext_resource type="Script" path="res://Scripts/Block.gd" id="1_dlso0"]
 [ext_resource type="Texture2D" uid="uid://16i1cqcp7g37" path="res://Sprites/I-block.png" id="1_psyrq"]
 [ext_resource type="AudioStream" uid="uid://cl3alqk411k78" path="res://Audio/Boom.mp3" id="3_n6fba"]
 [ext_resource type="Script" path="res://Scripts/iblockHitBox.gd" id="3_qbuws"]
@@ -13,6 +14,7 @@ size = Vector2(82, 22)
 [node name="Iblock" type="RigidBody2D"]
 mass = 50.0
 lock_rotation = true
+script = ExtResource("1_dlso0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
@@ -34,6 +36,7 @@ shape = SubResource("RectangleShape2D_awit5")
 
 [node name="death" type="AudioStreamPlayer" parent="hitBox"]
 stream = ExtResource("3_n6fba")
+volume_db = 0.405
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="hitBox" method="_on_iblock_body_entered"]
