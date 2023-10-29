@@ -23,7 +23,7 @@ func _process(delta):
 		if(randomBlock == 3):
 			block = preload("res://Prefabs/Block/L-block.tscn").instantiate()
 		if(randomBlock == 4):
-			block = preload("res://Prefabs/Block/T-block.tscn").instantiate()
+			block = preload("res://Prefabs/Block/J-block.tscn").instantiate()
 		add_child(block)
 		if(block.chosenRot % 2 == 0): #selects the array which will have the position chosen from
 			chosenSpot = block.locationsDown[randi_range(0,block.locationsDown.size() - 1)]
