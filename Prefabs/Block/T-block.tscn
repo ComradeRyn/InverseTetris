@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://1q74u4y4r87w"]
 
-[ext_resource type="Script" path="res://Scripts/Block.gd" id="1_q4jpr"]
-[ext_resource type="Texture2D" uid="uid://dovuvhvi1ngkc" path="res://Sprites/Blocks.png" id="2_k510w"]
+[ext_resource type="Script" path="res://Scripts/Block.gd" id="1_mdt6u"]
+[ext_resource type="Texture2D" uid="uid://dovuvhvi1ngkc" path="res://Sprites/Blocks.png" id="2_kh8mh"]
 
 [node name="T-Block" type="RigidBody2D"]
 mass = 57.8
 lock_rotation = true
-script = ExtResource("1_q4jpr")
+script = ExtResource("1_mdt6u")
 locationsDown = [-160, -100, -40, 20, 80, 140, 180]
 locationsUp = [-160, -120, -80, -40, 0, 40, 80, 120, 160, 180]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
-texture = ExtResource("2_k510w")
+texture = ExtResource("2_kh8mh")
 region_enabled = true
 region_rect = Rect2(96, 0, 16, 16)
 

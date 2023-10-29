@@ -15,15 +15,15 @@ func _process(delta):
 	if(spawnBlock): 
 		var randomBlock = randi_range(0,4) #random num that will be used to select type of block to place
 		if(randomBlock == 0):
-			block = preload("res://Prefabs/I-Block.tscn").instantiate() #Replace with method that picks random location to spawn block
+			block = preload("res://Prefabs/Block/I-block.tscn").instantiate() #Replace with method that picks random location to spawn block
 		if(randomBlock == 1):
-			block = preload("res://Prefabs/t-block.tscn").instantiate()
+			block = preload("res://Prefabs/Block/T-block.tscn").instantiate()
 		if(randomBlock == 2):
-			block = preload("res://Prefabs/o_block.tscn").instantiate()
+			block = preload("res://Prefabs/Block/O-block.tscn").instantiate()
 		if(randomBlock == 3):
-			block = preload("res://Prefabs/forwardL-block.tscn").instantiate()
+			block = preload("res://Prefabs/Block/L-block.tscn").instantiate()
 		if(randomBlock == 4):
-			block = preload("res://Prefabs/backwardL-block.tscn").instantiate()
+			block = preload("res://Prefabs/Block/T-block.tscn").instantiate()
 		add_child(block)
 		if(block.chosenRot % 2 == 0): #selects the array which will have the position chosen from
 			chosenSpot = block.locationsDown[randi_range(0,block.locationsDown.size() - 1)]
