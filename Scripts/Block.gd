@@ -1,8 +1,8 @@
 extends RigidBody2D
 
 
-@export var locationsDown : Array#[-160, -96, -32, 32, 96, 160]
-@export var locationsUp : Array #[-180, -160, -140, -120, -100, -80, -60, -40, -20, 0, 20, 40, 60, 80, 100, 120, 140, 160, 180]
+@export var locationsDown : Array#[-160, -100, -40, 20, 80, 140, 180]
+@export var locationsUp : Array #[-160, -120, -80, -40, 0, 40, 80, 120, 160, 180]
 var chosenRot = randi_range(0,3)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,7 +15,6 @@ func _ready():
 		self.set_rotation(PI)
 	else:
 		self.set_rotation(3 * PI/2)
-
 
 
 func _process(delta):

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b07jom3veqec6" path="res://Prefabs/InvisWall.tscn" id="1_yhlrh"]
 [ext_resource type="AudioStream" uid="uid://b1htffsgmnt1f" path="res://Audio/plink.mp3" id="2_5rrvo"]
-[ext_resource type="PackedScene" uid="uid://c1gecak3kptdq" path="res://Prefabs/Arena.tscn" id="4_fkhg6"]
+[ext_resource type="PackedScene" path="res://Prefabs/Arena.tscn" id="4_fkhg6"]
 [ext_resource type="Script" path="res://Scripts/Spawner.gd" id="6_2heko"]
 [ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/Player.tscn" id="6_hou6m"]
 [ext_resource type="PackedScene" uid="uid://c7mmdas1cnnny" path="res://Prefabs/Player3.tscn" id="8_ns2xt"]
