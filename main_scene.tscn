@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://b1htffsgmnt1f" path="res://Audio/plink.mp3" id="2_5rrvo"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_yepoe"]
 [ext_resource type="Script" path="res://Scripts/Spawner.gd" id="6_2heko"]
-[ext_resource type="Texture2D" uid="uid://beve8fypwyp22" path="res://Sprites/Tile.png" id="6_60w08"]
+[ext_resource type="Texture2D" uid="uid://bi5tmk0npkl7x" path="res://Sprites/Tile.png" id="6_60w08"]
 [ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/Player.tscn" id="6_hou6m"]
 [ext_resource type="Script" path="res://Scripts/tileMapHitBox.gd" id="8_jchxc"]
 [ext_resource type="PackedScene" uid="uid://c7mmdas1cnnny" path="res://Prefabs/Player3.tscn" id="8_ns2xt"]
