@@ -7,6 +7,8 @@
 mass = 51.79
 lock_rotation = true
 script = ExtResource("1_tbwly")
+locationsDown = [-160, -100, -40, 20, 80, 140, 180]
+locationsUp = [-160, -120, -80, -40, 0, 40, 80, 120, 160, 180]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
