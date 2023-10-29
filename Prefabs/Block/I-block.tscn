@@ -12,9 +12,6 @@ size = Vector2(82, 22)
 
 [node name="Iblock" type="RigidBody2D"]
 mass = 50.0
-max_contacts_reported = 3
-contact_monitor = true
-sleeping = true
 lock_rotation = true
 script = ExtResource("1_15me4")
 locationsDown = [-160, -96, -32, 32, 96, 160]
