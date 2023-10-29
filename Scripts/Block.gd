@@ -11,6 +11,8 @@ func _process(delta):
 		self.set_meta("type", "passive")
 	else:
 		self.set_meta("type", "hostile")
+	await get_tree().create_timer(10).timeout
+	self.queue_free()
 
 
 func _on_body_entered(body):
