@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvnh4foq8fb7o"]
+
+[ext_resource type="Script" path="res://Scripts/Spawner.gd" id="1_01bdx"]
+[ext_resource type="AudioStream" uid="uid://b1htffsgmnt1f" path="res://Audio/plink.mp3" id="2_lhsiy"]
+
+[node name="Spawner" type="Node2D"]
+position = Vector2(2.08165e-12, -400)
+script = ExtResource("1_01bdx")
+
+[node name="place" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_lhsiy")
+volume_db = -20.0

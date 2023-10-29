@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcyrh64ps6j3v"]
+[gd_scene load_steps=7 format=3 uid="uid://dcyrh64ps6j3v"]
 
-[ext_resource type="PackedScene" uid="uid://b07jom3veqec6" path="res://Prefabs/InvisWall.tscn" id="1_yhlrh"]
-[ext_resource type="AudioStream" uid="uid://b1htffsgmnt1f" path="res://Audio/plink.mp3" id="2_5rrvo"]
+[ext_resource type="PackedScene" uid="uid://bvnh4foq8fb7o" path="res://Prefabs/Spawner.tscn" id="1_3qx3v"]
 [ext_resource type="PackedScene" uid="uid://c1gecak3kptdq" path="res://Prefabs/Arena.tscn" id="4_fkhg6"]
-[ext_resource type="Script" path="res://Scripts/Spawner.gd" id="6_2heko"]
 [ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/Player.tscn" id="6_hou6m"]
 [ext_resource type="PackedScene" uid="uid://c7mmdas1cnnny" path="res://Prefabs/Player3.tscn" id="8_ns2xt"]
 [ext_resource type="PackedScene" uid="uid://ee7hnq5q0rd4" path="res://Prefabs/Player2.tscn" id="8_sbu4i"]
@@ -11,20 +9,10 @@
 
 [node name="MainScene" type="Node2D"]
 
-[node name="Spawner" type="Node2D" parent="."]
-position = Vector2(2.08165e-12, -400)
-script = ExtResource("6_2heko")
+[node name="MainCamera" type="Camera2D" parent="."]
+position = Vector2(2.08165e-12, -250)
 
-[node name="place" type="AudioStreamPlayer" parent="Spawner"]
-stream = ExtResource("2_5rrvo")
-volume_db = -20.0
-
-[node name="InvisWall2" parent="." instance=ExtResource("1_yhlrh")]
-position = Vector2(360, -208)
-scale = Vector2(1.01205, 1)
-
-[node name="InvisWall" parent="." instance=ExtResource("1_yhlrh")]
-position = Vector2(-306, -208)
+[node name="Spawner" parent="." instance=ExtResource("1_3qx3v")]
 
 [node name="TileMap" parent="." instance=ExtResource("4_fkhg6")]
 
@@ -57,6 +45,3 @@ keyboard_jump = "Controller4_Jump"
 keyboard_dash = "Controller4_Dash"
 keyboard_right = "Controller4_Right"
 keyboard_left = "Controller4_Left"
-
-[node name="MainCamera" type="Camera2D" parent="."]
-position = Vector2(2.08165e-12, -250)

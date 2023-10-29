@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends StaticBody2D
 
 
 @export var locationsDown : Array#[-160, -96, -32, 32, 96, 160]
@@ -26,6 +26,3 @@ func _process(delta):
 		self.set_meta("type", "hostile")
 	await get_tree().create_timer(10).timeout
 	self.queue_free()
-	
-#func _on_body_entered(body):
-	#self.set_deferred("freeze", "true")
