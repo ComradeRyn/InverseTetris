@@ -5,11 +5,8 @@ extends Area2D
 func _ready():
 	self.set_meta("hitbox", "player")
 
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-
+func _on_body_entered(body):
+	print("AAAAAA")
+	var block = body.get_meta("type")
+	if(block == "hostile"):
+		self.get_owner().queue_free() #kills player
