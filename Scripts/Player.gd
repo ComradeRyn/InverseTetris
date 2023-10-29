@@ -88,13 +88,13 @@ func _physics_process(delta):
 	if isS && isD && !isDashing && !isStunned:
 		isDashing = true
 		dashCoolingdown = true
-		self.apply_central_impulse(Vector2(SPEED * 1.2,0))
+		self.apply_central_impulse(Vector2(SPEED * 1.05,0))
 		$dash.play()
 	
 	elif isS && isA && !isDashing && !isStunned:
 		isDashing = true
 		dashCoolingdown = true
-		self.apply_central_impulse(Vector2(-SPEED * 1.2,0))
+		self.apply_central_impulse(Vector2(-SPEED * 1.05,0))
 		$dash.play()
 	
 	#Dash check to allow dashing again

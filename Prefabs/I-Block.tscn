@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dju14nvribys5"]
+[gd_scene load_steps=7 format=3 uid="uid://dju14nvribys5"]
 
 [ext_resource type="Script" path="res://Scripts/Block.gd" id="1_imuoo"]
 [ext_resource type="Texture2D" uid="uid://16i1cqcp7g37" path="res://Sprites/I-block.png" id="1_psyrq"]
@@ -36,5 +36,6 @@ shape = SubResource("RectangleShape2D_awit5")
 
 [node name="death" type="AudioStreamPlayer" parent="hitBox"]
 stream = ExtResource("3_n6fba")
+volume_db = 0.405
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
