@@ -9,3 +9,6 @@ func _on_body_entered(body):
 	var block = body.get_meta("type")
 	if(block == "hostile"):
 		self.get_owner().queue_free() #kills player
+
+func _on_area_entered(area):
+	self.get_owner().queue_free();
