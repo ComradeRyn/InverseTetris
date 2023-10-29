@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba4nr2g042n7h"]
+
+[ext_resource type="Texture2D" uid="uid://dovuvhvi1ngkc" path="res://Sprites/Blocks.png" id="1_k8se0"]
+[ext_resource type="Script" path="res://Scripts/Block.gd" id="1_x6bxi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3qq6"]
+size = Vector2(39, 40)
+
+[node name="o-block" type="RigidBody2D"]
+mass = 50.0
+script = ExtResource("1_x6bxi")
+locationsDown = [-180, -140, -100, -60, -20, 20, 60, 100, 140, 180]
+locationsUp = [-180, -140, -100, -60, -20, 20, 60, 100, 140, 180]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u3qq6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_k8se0")
+region_enabled = true
+region_rect = Rect2(48, 2.08165e-12, 8, 8)
