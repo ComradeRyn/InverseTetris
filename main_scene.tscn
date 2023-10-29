@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcyrh64ps6j3v"]
+[gd_scene load_steps=11 format=3 uid="uid://dcyrh64ps6j3v"]
 
 [ext_resource type="PackedScene" uid="uid://bvnh4foq8fb7o" path="res://Prefabs/Spawner.tscn" id="1_3qx3v"]
 [ext_resource type="PackedScene" uid="uid://c1gecak3kptdq" path="res://Prefabs/Arena.tscn" id="4_fkhg6"]
@@ -60,7 +60,7 @@ keyboard_left = "Controller4_Left"
 position = Vector2(2.08165e-12, -250)
 
 [node name="Background" parent="." instance=ExtResource("9_g0po4")]
-position = Vector2(-639, -626)
+position = Vector2(0, 76)
 
 [node name="killZone" type="Area2D" parent="."]
 position = Vector2(0, 44)

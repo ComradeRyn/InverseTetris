@@ -2,8 +2,8 @@ extends Node2D
 
 var block
 var spawnBlock = false
-var spawnRate = 1
-var decrementRate = 0.01
+var spawnRate = 1.5
+var decrementRate = .015
 var chosenSpot = -1 #location which the block will be placed
 
 func _ready(): #Waits before spawning first block
