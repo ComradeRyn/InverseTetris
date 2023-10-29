@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://1q74u4y4r87w"]
+
+[ext_resource type="Texture2D" uid="uid://dovuvhvi1ngkc" path="res://Sprites/Blocks.png" id="1_hexri"]
+
+[node name="T-Block" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hexri")
+region_enabled = true
+region_rect = Rect2(96, 0, 16, 16)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, -4, -8, 0, 4, 0, 4, -4, 0, -4, 0, -8, -4, -8, -4, -4)
