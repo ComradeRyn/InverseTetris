@@ -49,7 +49,6 @@ freeze = true
 script = ExtResource("5_gxs4d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisWall"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ncq70")
 
 [node name="InvisWall2" type="RigidBody2D" parent="."]
@@ -61,5 +60,4 @@ freeze = true
 script = ExtResource("5_gxs4d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisWall2"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_apac8")

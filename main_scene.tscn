@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcyrh64ps6j3v"]
+[gd_scene load_steps=10 format=3 uid="uid://dcyrh64ps6j3v"]
 
 [ext_resource type="PackedScene" uid="uid://b07jom3veqec6" path="res://Prefabs/InvisWall.tscn" id="1_yhlrh"]
 [ext_resource type="AudioStream" uid="uid://b1htffsgmnt1f" path="res://Audio/plink.mp3" id="2_5rrvo"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c7mmdas1cnnny" path="res://Prefabs/Player3.tscn" id="8_ns2xt"]
 [ext_resource type="PackedScene" uid="uid://ee7hnq5q0rd4" path="res://Prefabs/Player2.tscn" id="8_sbu4i"]
 [ext_resource type="PackedScene" uid="uid://die5x6dp03xno" path="res://Prefabs/Player4.tscn" id="9_6qhhv"]
+[ext_resource type="PackedScene" uid="uid://bcy1oxkawf0t7" path="res://Prefabs/background.tscn" id="9_g0po4"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -60,3 +61,6 @@ keyboard_left = "Controller4_Left"
 
 [node name="MainCamera" type="Camera2D" parent="."]
 position = Vector2(2.08165e-12, -250)
+
+[node name="Background" parent="." instance=ExtResource("9_g0po4")]
+position = Vector2(-573, -573)
