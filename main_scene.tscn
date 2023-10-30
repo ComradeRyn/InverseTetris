@@ -8,16 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ee7hnq5q0rd4" path="res://Prefabs/Players/Player2.tscn" id="8_sbu4i"]
 [ext_resource type="Script" path="res://Scripts/GameController.gd" id="8_x3f82"]
 [ext_resource type="PackedScene" uid="uid://die5x6dp03xno" path="res://Prefabs/Players/Player4.tscn" id="9_6qhhv"]
-[ext_resource type="PackedScene" uid="uid://bcy1oxkawf0t7" path="res://Prefabs/background.tscn" id="9_g0po4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3os2"]
-size = Vector2(9613, 219)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovtff"]
-size = Vector2(25, 412.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejwo0"]
-size = Vector2(19, 405)
+[ext_resource type="PackedScene" uid="uid://bcy1oxkawf0t7" path="res://Prefabs/Background.tscn" id="9_g0po4"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -69,23 +60,3 @@ position = Vector2(2.08165e-12, -250)
 
 [node name="Background" parent="." instance=ExtResource("9_g0po4")]
 position = Vector2(-2, 85)
-
-[node name="killZone" type="Area2D" parent="."]
-position = Vector2(0, 44)
-
-[node name="bottomKillerZone" type="CollisionShape2D" parent="killZone"]
-position = Vector2(-122, 512)
-shape = SubResource("RectangleShape2D_i3os2")
-
-[node name="leftKillerZone" type="CollisionShape2D" parent="killZone"]
-position = Vector2(-213, -668)
-shape = SubResource("RectangleShape2D_ovtff")
-
-[node name="rightKillerZone" type="CollisionShape2D" parent="killZone"]
-position = Vector2(211.5, -663.5)
-shape = SubResource("RectangleShape2D_ejwo0")
-
-[connection signal="tree_exited" from="Players/Player" to="GameController" method="_on_player_tree_exited"]
-[connection signal="tree_exited" from="Players/Player2" to="GameController" method="_on_player_2_tree_exited"]
-[connection signal="tree_exited" from="Players/Player3" to="GameController" method="_on_player_3_tree_exited"]
-[connection signal="tree_exited" from="Players/Player4" to="GameController" method="_on_player_4_tree_exited"]
