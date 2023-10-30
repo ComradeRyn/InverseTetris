@@ -35,6 +35,7 @@ position = Vector2(2.08165e-12, -250)
 script = ExtResource("3_lumsg")
 
 [node name="Spawner" parent="." instance=ExtResource("1_3qx3v")]
+position = Vector2(2.08165e-12, -400)
 
 [node name="TileMap" parent="." instance=ExtResource("4_fkhg6")]
 
@@ -69,7 +70,7 @@ keyboard_right = "Controller4_Right"
 keyboard_left = "Controller4_Left"
 
 [node name="Background" parent="." instance=ExtResource("9_g0po4")]
-position = Vector2(0, 76)
+position = Vector2(2.08165e-12, 80)
 
 [node name="killZone" type="Area2D" parent="."]
 position = Vector2(0, 44)
