@@ -1,5 +1,5 @@
 extends Area2D
-
+signal character_died
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,6 +8,7 @@ func _ready():
 func _on_body_entered(body):
 	var block = body.get_meta("type")
 	if(block == "hostile"):
+		character_died.emit()
 		self.get_owner().queue_free() #kills player
 
 func _on_area_entered(area):
