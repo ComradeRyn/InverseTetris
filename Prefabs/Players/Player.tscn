@@ -86,8 +86,8 @@ animations = [{
 }]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_t8exn"]
-a = Vector2(-8, -10)
-b = Vector2(8, -10)
+a = Vector2(-6, -10)
+b = Vector2(6, -10)
 
 [node name="Player" type="RigidBody2D"]
 max_contacts_reported = 2

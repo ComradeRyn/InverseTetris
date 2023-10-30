@@ -2,7 +2,7 @@ extends RigidBody2D
 
 
 @export var locationsDown : Array #location arrays for the different oreientation of the blocks
-@export var locationsUp : Array
+@export var locationsUp : Array 
 var chosenRot = randi_range(0,3)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

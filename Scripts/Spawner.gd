@@ -13,7 +13,7 @@ func _ready(): #Waits before spawning first block
 
 func _process(delta):
 	if(spawnBlock): 
-		var randomBlock = randi_range(0,4) #random num that will be used to select type of block to place
+		var randomBlock = randi_range(0,6) #random num that will be used to select type of block to place
 		if(randomBlock == 0):
 			block = preload("res://Prefabs/Block/I-block.tscn").instantiate() #Replace with method that picks random location to spawn block
 		if(randomBlock == 1):
@@ -24,6 +24,10 @@ func _process(delta):
 			block = preload("res://Prefabs/Block/L-block.tscn").instantiate()
 		if(randomBlock == 4):
 			block = preload("res://Prefabs/Block/J-block.tscn").instantiate()
+		if(randomBlock == 5):
+			block = preload("res://Prefabs/Block/S-block.tscn").instantiate()
+		if(randomBlock == 6):
+			block = preload("res://Prefabs/Block/Z-block.tscn").instantiate()
 		add_child(block)
 		if(block.chosenRot % 2 == 0): #selects the array which will have the position chosen from
 			chosenSpot = block.locationsDown[randi_range(0,block.locationsDown.size() - 1)]

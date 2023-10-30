@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4bfqrnklrqo6"]
+
+[ext_resource type="Script" path="res://Scripts/Block.gd" id="1_2ch8h"]
+[ext_resource type="Texture2D" uid="uid://dovuvhvi1ngkc" path="res://Sprites/Blocks.png" id="1_fxn13"]
+
+[node name="Z-block" type="RigidBody2D"]
+mass = 50.0
+lock_rotation = true
+script = ExtResource("1_2ch8h")
+locationsDown = [-180, -140, -100, -60, -20, 20, 60, 100, 140, 180]
+locationsUp = [-180, -140, -100, -60, -20, 20, 60, 100, 140, 180]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_fxn13")
+region_enabled = true
+region_rect = Rect2(80, 0, 16, 16)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-40, -20, -20, -20, -20, 0, 20, 0, 20, -20, 0, -20, 0, -40, -40, -40)
