@@ -5,12 +5,5 @@
 [node name="Background" type="Node2D"]
 show_behind_parent = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1410.0
-offset_top = -1237.0
-offset_right = 1439.0
-offset_bottom = 456.0
-color = Color(0.466667, 0.14902, 0.0862745, 1)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_v1pvx")

@@ -72,15 +72,12 @@ shape = SubResource("RectangleShape2D_apac8")
 
 [node name="bottomKillerZone" type="CollisionShape2D" parent="killZone"]
 position = Vector2(-4.57764e-05, 32)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sm7al")
 
 [node name="leftKillZone" type="CollisionShape2D" parent="killZone"]
 position = Vector2(-42, -110)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7fowp")
 
 [node name="rightKillZone" type="CollisionShape2D" parent="killZone"]
 position = Vector2(42, -110)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7fowp")

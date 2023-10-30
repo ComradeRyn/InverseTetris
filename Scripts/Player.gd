@@ -129,4 +129,5 @@ func getDirection(): #Gets the direction the player is moving in on the x-axis
 
 func _on_body_exited(body): #Will not allow player to jump if exiting a body
 	if(body.get_meta("type") == "block" || body.get_meta("type") == "grid"):
+		await get_tree().create_timer(0.1).timeout
 		grounded = false;
