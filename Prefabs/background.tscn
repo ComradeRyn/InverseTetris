@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bcy1oxkawf0t7"]
 
-[sub_resource type="ImageTexture" id="ImageTexture_x41pk"]
+[ext_resource type="Texture2D" uid="uid://bxdy6vjgk80vl" path="res://Sprites/BirdGalaxy.jpg" id="1_v1pvx"]
 
 [node name="Background" type="Node2D"]
 show_behind_parent = true
@@ -13,6 +13,4 @@ offset_bottom = 456.0
 color = Color(0.466667, 0.14902, 0.0862745, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(638.5, 383)
-scale = Vector2(9.99219, 5.98438)
-texture = SubResource("ImageTexture_x41pk")
+texture = ExtResource("1_v1pvx")

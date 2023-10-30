@@ -60,6 +60,6 @@ keyboard_right = "Controller4_Right"
 keyboard_left = "Controller4_Left"
 
 [node name="Background" parent="." instance=ExtResource("9_g0po4")]
-position = Vector2(0, 76)
+position = Vector2(0, -250)
 
 [connection signal="child_exiting_tree" from="Players" to="gameController" method="_on_players_child_exiting_tree"]
