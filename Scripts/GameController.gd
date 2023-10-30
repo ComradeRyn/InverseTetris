@@ -18,3 +18,4 @@ func _process(delta):
 func _on_players_child_exiting_tree(node): #Whenever anything is destroyed from players node, this code runs
 	numOfPlayers -= 1
 	$Boom.play()
+	MainCamera.apply_shake()
