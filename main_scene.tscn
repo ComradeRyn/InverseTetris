@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcyrh64ps6j3v"]
+[gd_scene load_steps=9 format=3 uid="uid://dcyrh64ps6j3v"]
 
 [ext_resource type="PackedScene" uid="uid://bvnh4foq8fb7o" path="res://Prefabs/Spawner.tscn" id="1_3qx3v"]
 [ext_resource type="PackedScene" uid="uid://c1gecak3kptdq" path="res://Prefabs/Arena.tscn" id="4_fkhg6"]
@@ -7,16 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ee7hnq5q0rd4" path="res://Prefabs/Players/Player2.tscn" id="8_sbu4i"]
 [ext_resource type="Script" path="res://Scripts/GameController.gd" id="8_x3f82"]
 [ext_resource type="PackedScene" uid="uid://die5x6dp03xno" path="res://Prefabs/Players/Player4.tscn" id="9_6qhhv"]
-[ext_resource type="PackedScene" uid="uid://bcy1oxkawf0t7" path="res://Prefabs/background.tscn" id="9_g0po4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3os2"]
-size = Vector2(9613, 219)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovtff"]
-size = Vector2(20, 272)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_62prw"]
-size = Vector2(20, 272)
+[ext_resource type="PackedScene" uid="uid://bcy1oxkawf0t7" path="res://Prefabs/Background.tscn" id="9_g0po4"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -65,18 +56,3 @@ position = Vector2(2.08165e-12, -250)
 
 [node name="Background" parent="." instance=ExtResource("9_g0po4")]
 position = Vector2(-2, 85)
-
-[node name="killZone" type="Area2D" parent="."]
-position = Vector2(0, 44)
-
-[node name="bottomKillerZone" type="CollisionShape2D" parent="killZone"]
-position = Vector2(-122, 512)
-shape = SubResource("RectangleShape2D_i3os2")
-
-[node name="leftKillerZone" type="CollisionShape2D" parent="killZone"]
-position = Vector2(-210, -640)
-shape = SubResource("RectangleShape2D_ovtff")
-
-[node name="leftKillerZone2" type="CollisionShape2D" parent="killZone"]
-position = Vector2(210, -640)
-shape = SubResource("RectangleShape2D_62prw")
