@@ -6,10 +6,9 @@
 show_behind_parent = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1173.0
-offset_top = -1278.0
-offset_right = 1174.0
-offset_bottom = -6.0
+offset_left = -577.0
+offset_top = -658.0
+offset_right = 578.0
 color = Color(0.466667, 0.14902, 0.0862745, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

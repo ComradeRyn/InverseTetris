@@ -23,9 +23,6 @@ var isStunned = false
 
 @onready var anim = get_node("PlayerAnim")
 
-var camera = preload("res://Scripts/MainCamera.gd").new()
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	anim.play("Idle")
