@@ -129,7 +129,3 @@ func getDirection(): #Gets the direction the player is moving in on the x-axis
 	else:
 		d = 0;
 	return d
-
-
-func _on_hurtbox_body_entered(body):
-	pass # Replace with function body.

@@ -4,6 +4,7 @@ extends RigidBody2D
 @export var locationsDown : Array #location arrays for the different oreientation of the blocks
 @export var locationsUp : Array
 var chosenRot = randi_range(0,3)
+var isFalling = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,6 +28,5 @@ func _process(delta):
 		
 	await get_tree().create_timer(10).timeout
 	self.queue_free()
-	
-#func _on_body_entered(body):
-	#self.set_deferred("freeze", "true")
+
+
