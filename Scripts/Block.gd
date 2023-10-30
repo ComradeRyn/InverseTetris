@@ -7,6 +7,7 @@ var chosenRot = randi_range(0,3)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready():
+	self.set_meta("type", "block")
 	if(chosenRot == 0):
 		self.set_rotation(0)
 	elif(chosenRot == 1):
@@ -20,9 +21,9 @@ func _ready():
 func _process(delta):
 	var yVel = get_linear_velocity().y
 	if(yVel <= 0):
-		self.set_meta("type", "passive")
+		self.set_meta("block", "passive")
 	else:
-		self.set_meta("type", "hostile")
+		self.set_meta("block", "hostile")
 	await get_tree().create_timer(10).timeout
 	self.queue_free()
 	
