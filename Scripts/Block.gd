@@ -5,6 +5,7 @@ extends RigidBody2D
 @export var locationsUp : Array
 var chosenRot = randi_range(0,3)
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready():
 	if(chosenRot == 0):
@@ -23,6 +24,7 @@ func _process(delta):
 		self.set_meta("type", "passive")
 	else:
 		self.set_meta("type", "hostile")
+		
 	await get_tree().create_timer(10).timeout
 	self.queue_free()
 	
