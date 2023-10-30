@@ -9,11 +9,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if(Input.is_key_pressed(KEY_F11)):
+		swap_fullscreen_mode()
 	if(Input.is_action_just_pressed("restart") || numOfPlayers == 0):
 		await get_tree().create_timer(3).timeout
 		get_tree().reload_current_scene()
-	if(Input.is_key_pressed(KEY_F11)):
-		swap_fullscreen_mode()
+	
 
 
 func _on_players_child_exiting_tree(node): #Whenever anything is destroyed from players node, this code runs
