@@ -127,6 +127,6 @@ func getDirection(): #Gets the direction the player is moving in on the x-axis
 		d = 0;
 	return d
 
-
-func _on_hurtbox_body_entered(body):
-	pass # Replace with function body.
+func _on_body_exited(body): #Will not allow player to jump if exiting a body
+	if(body.get_meta("type") == "block" || body.get_meta("type") == "grid"):
+		grounded = false;
