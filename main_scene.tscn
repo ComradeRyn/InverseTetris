@@ -26,6 +26,7 @@ position = Vector2(2.08165e-12, -250)
 script = ExtResource("3_lumsg")
 
 [node name="Spawner" parent="." instance=ExtResource("1_3qx3v")]
+position = Vector2(2.08165e-12, -400)
 
 [node name="TileMap" parent="." instance=ExtResource("4_fkhg6")]
 
@@ -60,6 +61,7 @@ keyboard_right = "Controller4_Right"
 keyboard_left = "Controller4_Left"
 
 [node name="Background" parent="." instance=ExtResource("9_g0po4")]
-position = Vector2(0, -250)
+
+position = Vector2(2.08165e-12, 80)
 
 [connection signal="child_exiting_tree" from="Players" to="gameController" method="_on_players_child_exiting_tree"]
