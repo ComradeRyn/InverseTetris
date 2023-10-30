@@ -13,10 +13,10 @@
 size = Vector2(9613, 219)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovtff"]
-size = Vector2(25, 412.5)
+size = Vector2(20, 272)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejwo0"]
-size = Vector2(19, 405)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62prw"]
+size = Vector2(20, 272)
 
 [node name="MainScene" type="Node2D"]
 
@@ -74,9 +74,9 @@ position = Vector2(-122, 512)
 shape = SubResource("RectangleShape2D_i3os2")
 
 [node name="leftKillerZone" type="CollisionShape2D" parent="killZone"]
-position = Vector2(-213, -668)
+position = Vector2(-210, -640)
 shape = SubResource("RectangleShape2D_ovtff")
 
-[node name="rightKillerZone" type="CollisionShape2D" parent="killZone"]
-position = Vector2(211.5, -663.5)
-shape = SubResource("RectangleShape2D_ejwo0")
+[node name="leftKillerZone2" type="CollisionShape2D" parent="killZone"]
+position = Vector2(210, -640)
+shape = SubResource("RectangleShape2D_62prw")
