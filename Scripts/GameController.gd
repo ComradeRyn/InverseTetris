@@ -15,22 +15,6 @@ func _process(delta):
 		get_tree().reload_current_scene()
 
 
-
-func _on_player_tree_exited():
-	numOfPlayers -= 1 # Replace with function body.
-	$Boom.play()
-
-
-func _on_player_2_tree_exited():
-	numOfPlayers -= 1 # Replace with function body.
-	$Boom.play()
-
-
-func _on_player_3_tree_exited():
-	numOfPlayers -= 1 # Replace with function body.
-	$Boom.play()
-
-
-func _on_player_4_tree_exited():
-	numOfPlayers -= 1 # Replace with function body.
+func _on_players_child_exiting_tree(node): #Whenever anything is destroyed from players node, this code runs
+	numOfPlayers -= 1
 	$Boom.play()
