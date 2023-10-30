@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dcyrh64ps6j3v"]
+[gd_scene load_steps=10 format=3 uid="uid://dcyrh64ps6j3v"]
 
 [ext_resource type="PackedScene" uid="uid://bvnh4foq8fb7o" path="res://Prefabs/Spawner.tscn" id="1_3qx3v"]
 [ext_resource type="AudioStream" uid="uid://cl3alqk411k78" path="res://Audio/Boom.mp3" id="2_kfb8x"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ee7hnq5q0rd4" path="res://Prefabs/Players/Player2.tscn" id="8_sbu4i"]
 [ext_resource type="Script" path="res://Scripts/GameController.gd" id="8_x3f82"]
 [ext_resource type="PackedScene" uid="uid://die5x6dp03xno" path="res://Prefabs/Players/Player4.tscn" id="9_6qhhv"]
-[ext_resource type="PackedScene" uid="uid://bcy1oxkawf0t7" path="res://Prefabs/Background.tscn" id="9_g0po4"]
+[ext_resource type="PackedScene" uid="uid://bcy1oxkawf0t7" path="res://Prefabs/background.tscn" id="9_g0po4"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -60,3 +60,9 @@ position = Vector2(2.08165e-12, -250)
 
 [node name="Background" parent="." instance=ExtResource("9_g0po4")]
 position = Vector2(-2, 85)
+
+[connection signal="child_exiting_tree" from="Players" to="GameController" method="_on_players_child_exiting_tree"]
+[connection signal="tree_exited" from="Players/Player" to="GameController" method="_on_player_tree_exited"]
+[connection signal="tree_exited" from="Players/Player2" to="GameController" method="_on_player_2_tree_exited"]
+[connection signal="tree_exited" from="Players/Player3" to="GameController" method="_on_player_3_tree_exited"]
+[connection signal="tree_exited" from="Players/Player4" to="GameController" method="_on_player_4_tree_exited"]
