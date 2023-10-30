@@ -1,13 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhl7dumgkt64w"]
+[gd_scene load_steps=4 format=3 uid="uid://dhl7dumgkt64w"]
 
 [ext_resource type="Script" path="res://Scripts/Block.gd" id="1_15me4"]
 [ext_resource type="Texture2D" uid="uid://16i1cqcp7g37" path="res://Sprites/I-block.png" id="2_0yb7g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbfpy"]
 size = Vector2(16, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_awit5"]
-size = Vector2(82, 22)
 
 [node name="Iblock" type="RigidBody2D"]
 mass = 50.0
@@ -26,11 +23,5 @@ region_rect = Rect2(0, 0, 16, 16)
 position = Vector2(0, -10)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_dbfpy")
-
-[node name="hitBox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox"]
-position = Vector2(0, -10)
-shape = SubResource("RectangleShape2D_awit5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
