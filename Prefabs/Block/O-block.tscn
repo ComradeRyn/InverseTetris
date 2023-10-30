@@ -8,6 +8,8 @@ size = Vector2(39, 40)
 
 [node name="o-block" type="RigidBody2D"]
 mass = 50.0
+max_contacts_reported = 9
+contact_monitor = true
 lock_rotation = true
 script = ExtResource("1_tmn6c")
 locationsDown = [-180, -140, -100, -60, -20, 20, 60, 100, 140, 180]
@@ -21,3 +23,6 @@ scale = Vector2(5, 5)
 texture = ExtResource("2_ojeso")
 region_enabled = true
 region_rect = Rect2(48, 2.08165e-12, 8, 8)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

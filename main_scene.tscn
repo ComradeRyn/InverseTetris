@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c7mmdas1cnnny" path="res://Prefabs/Players/Player3.tscn" id="8_ns2xt"]
 [ext_resource type="PackedScene" uid="uid://ee7hnq5q0rd4" path="res://Prefabs/Players/Player2.tscn" id="8_sbu4i"]
 [ext_resource type="PackedScene" uid="uid://die5x6dp03xno" path="res://Prefabs/Players/Player4.tscn" id="9_6qhhv"]
-[ext_resource type="PackedScene" uid="uid://bcy1oxkawf0t7" path="res://Prefabs/Background.tscn" id="9_g0po4"]
+[ext_resource type="PackedScene" uid="uid://bcy1oxkawf0t7" path="res://Prefabs/background.tscn" id="9_g0po4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3os2"]
 size = Vector2(9613, 219)
@@ -60,7 +60,7 @@ keyboard_left = "Controller4_Left"
 position = Vector2(2.08165e-12, -250)
 
 [node name="Background" parent="." instance=ExtResource("9_g0po4")]
-position = Vector2(0, 76)
+position = Vector2(-2, 85)
 
 [node name="killZone" type="Area2D" parent="."]
 position = Vector2(0, 44)
