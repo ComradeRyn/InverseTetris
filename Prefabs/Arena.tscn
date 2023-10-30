@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c1gecak3kptdq"]
+[gd_scene load_steps=11 format=3 uid="uid://c1gecak3kptdq"]
 
 [ext_resource type="Texture2D" uid="uid://bi5tmk0npkl7x" path="res://Sprites/Tile.png" id="1_detkd"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_bx75m"]
@@ -33,12 +33,6 @@ size = Vector2(4, 92)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_apac8"]
 size = Vector2(4.00816, 92)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3q57"]
-size = Vector2(490.144, 15.45)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jf6h"]
-size = Vector2(4, 19.4)
-
 [node name="TileMap" type="TileMap"]
 scale = Vector2(5, 5)
 tile_set = SubResource("TileSet_hal6p")
@@ -67,20 +61,3 @@ script = ExtResource("5_gxs4d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisWall2"]
 shape = SubResource("RectangleShape2D_apac8")
-
-[node name="killZone" type="Area2D" parent="."]
-
-[node name="bottomKillZone" type="CollisionShape2D" parent="killZone"]
-position = Vector2(0, 20)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_m3q57")
-
-[node name="leftKillZone" type="CollisionShape2D" parent="killZone"]
-position = Vector2(-42, -101.7)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_0jf6h")
-
-[node name="rightKillZone" type="CollisionShape2D" parent="killZone"]
-position = Vector2(42, -101.7)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_0jf6h")
