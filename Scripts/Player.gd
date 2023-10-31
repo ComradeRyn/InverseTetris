@@ -71,6 +71,9 @@ func _physics_process(delta):
 		yVel = -400
 		self.apply_central_impulse(Vector2(0, yVel))
 		$jump.play()
+	
+	if(get_colliding_bodies().size() == 0): #Doesnt account for celeste
+		grounded = false;
 		
 	if isD && !isA && !isDashing && !isStunned: #Move Right
 		anim.play("Run")
@@ -127,7 +130,3 @@ func getDirection(): #Gets the direction the player is moving in on the x-axis
 		d = 0;
 	return d
 
-func _on_body_exited(body): #Will not allow player to jump if exiting a body
-	if(body.get_meta("type") == "block" || body.get_meta("type") == "grid"):
-		await get_tree().create_timer(0.1).timeout
-		grounded = false;
