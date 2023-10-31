@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwcdliydskld3"
+path="res://.godot/imported/Adana - Teental - Aditya Verma, Subir Dev.mp3-202e13d24b26e90d813f1bcd9c0e3bff.mp3str"
+
+[deps]
+
+source_file="res://Prefabs/music/Adana - Teental - Aditya Verma, Subir Dev.mp3"
+dest_files=["res://.godot/imported/Adana - Teental - Aditya Verma, Subir Dev.mp3-202e13d24b26e90d813f1bcd9c0e3bff.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

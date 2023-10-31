@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bos1ngk57o77c"
+path="res://.godot/imported/Crash & Burn - Aakash Gandhi.mp3-d6c6d9e2fcda0ee249b9fcc2a901a4af.mp3str"
+
+[deps]
+
+source_file="res://Prefabs/music/Crash & Burn - Aakash Gandhi.mp3"
+dest_files=["res://.godot/imported/Crash & Burn - Aakash Gandhi.mp3-d6c6d9e2fcda0ee249b9fcc2a901a4af.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
