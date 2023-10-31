@@ -5,7 +5,7 @@ extends RigidBody2D
 @export var locationsUp : Array 
 var chosenRot = randi_range(0,3)
 
-var fallSpeed = 300
+var fallSpeed = 400
 var incrementRate = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,6 +21,7 @@ func _ready():
 		self.set_rotation(3 * PI/2)
 
 	# Set an initial linear velocity in the y-direction
+	await get_tree().create_timer(.2).timeout
 	var initial_velocity = Vector2(0, fallSpeed)
 	set_linear_velocity(initial_velocity)
 
