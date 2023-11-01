@@ -40,6 +40,7 @@ keyboard_left = "left1"
 
 [node name="Player2" parent="Players" instance=ExtResource("8_sbu4i")]
 position = Vector2(-50, -10)
+physics_material_override = null
 keyboard_jump = "jump2"
 keyboard_dash = "dash2"
 keyboard_right = "right2"
@@ -47,6 +48,7 @@ keyboard_left = "left2"
 
 [node name="Player3" parent="Players" instance=ExtResource("8_ns2xt")]
 position = Vector2(50, -10)
+physics_material_override = null
 keyboard_jump = "Controller3_Jump"
 keyboard_dash = "Controller3_Dash"
 keyboard_right = "Controller3_Right"
@@ -54,6 +56,7 @@ keyboard_left = "Controller3_Left"
 
 [node name="Player4" parent="Players" instance=ExtResource("9_6qhhv")]
 position = Vector2(150, -10)
+physics_material_override = null
 keyboard_jump = "Controller4_Jump"
 keyboard_dash = "Controller4_Dash"
 keyboard_right = "Controller4_Right"

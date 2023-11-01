@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4bfqrnklrqo6"]
+[gd_scene load_steps=4 format=3 uid="uid://b4bfqrnklrqo6"]
 
 [ext_resource type="Script" path="res://Scripts/Block.gd" id="1_2ch8h"]
+[ext_resource type="PhysicsMaterial" uid="uid://bw47fhjnng2bq" path="res://PhysicsMaterial/NoFriction.tres" id="1_3om40"]
 [ext_resource type="Texture2D" uid="uid://dovuvhvi1ngkc" path="res://Sprites/Blocks.png" id="1_fxn13"]
 
 [node name="Z-block" type="RigidBody2D"]
 mass = 50.0
+physics_material_override = ExtResource("1_3om40")
 lock_rotation = true
 script = ExtResource("1_2ch8h")
 locationsDown = [-180, -140, -100, -60, -20, 20, 60, 100, 140, 180]

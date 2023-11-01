@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://dv08usgmi7ngg"]
+[gd_scene load_steps=20 format=3 uid="uid://dv08usgmi7ngg"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://bw47fhjnng2bq" path="res://PhysicsMaterial/NoFriction.tres" id="1_861ot"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_upd2l"]
 [ext_resource type="Texture2D" uid="uid://b5jsnu4hcsxti" path="res://Sprites/Player/Player.png" id="2_2kwn0"]
 [ext_resource type="Script" path="res://Scripts/playerHurtbox.gd" id="3_xqf08"]
@@ -86,10 +87,11 @@ animations = [{
 }]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_t8exn"]
-a = Vector2(-6, -10)
-b = Vector2(6, -10)
+a = Vector2(-3, -10)
+b = Vector2(3, -10)
 
 [node name="Player" type="RigidBody2D"]
+physics_material_override = ExtResource("1_861ot")
 max_contacts_reported = 2
 contact_monitor = true
 script = ExtResource("1_upd2l")
