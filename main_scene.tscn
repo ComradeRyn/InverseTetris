@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcyrh64ps6j3v"]
+[gd_scene load_steps=22 format=3 uid="uid://dcyrh64ps6j3v"]
 
 [ext_resource type="PackedScene" uid="uid://bvnh4foq8fb7o" path="res://Prefabs/Spawner.tscn" id="1_3qx3v"]
 [ext_resource type="AudioStream" uid="uid://cl3alqk411k78" path="res://Audio/Boom.mp3" id="2_kfb8x"]
@@ -11,6 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://die5x6dp03xno" path="res://Prefabs/Players/Player4.tscn" id="9_6qhhv"]
 [ext_resource type="PackedScene" uid="uid://bcy1oxkawf0t7" path="res://Prefabs/background.tscn" id="9_g0po4"]
 [ext_resource type="Script" path="res://Music.gd" id="11_6cf61"]
+[ext_resource type="AudioStream" uid="uid://dyys335uolkxo" path="res://Music/Adana - Teental - Aditya Verma, Subir Dev.mp3" id="12_wnfp1"]
+[ext_resource type="AudioStream" uid="uid://blj21wfmc634d" path="res://Music/AppleSong2.wav" id="13_htqvt"]
+[ext_resource type="AudioStream" uid="uid://chg3syxhwmumf" path="res://Music/Crash & Burn - Aakash Gandhi.mp3" id="14_tiyub"]
+[ext_resource type="AudioStream" uid="uid://dgavleqp7xs2y" path="res://Music/elf-singing-89296.mp3" id="15_n21tn"]
+[ext_resource type="AudioStream" uid="uid://b15evfjwls3jb" path="res://Music/guitar-riff-159089.mp3" id="16_ytnax"]
+[ext_resource type="AudioStream" uid="uid://dytasth66agqp" path="res://Music/High Noon - TrackTribe.mp3" id="17_65pgu"]
+[ext_resource type="AudioStream" uid="uid://cqcolbh4eqt0n" path="res://Music/Raag Pilu - Sandeep Das, Adhiraj Chaudhuri, Bivakar Chaudhuri.mp3" id="18_uqksv"]
+[ext_resource type="AudioStream" uid="uid://bndmncvbo33ci" path="res://Music/Spring In My Step - Silent Partner.mp3" id="19_60752"]
+[ext_resource type="AudioStream" uid="uid://sc4bxi0nmvop" path="res://Music/Squirm Worm - TrackTribe.mp3" id="20_2847w"]
+[ext_resource type="AudioStream" uid="uid://lmslp5qfaoan" path="res://Music/The Mumbai Beat - Hanu Dixit.mp3" id="21_rrdws"]
 
 [node name="MainScene" type="Node2D"]
 position = Vector2(0, 248)
@@ -68,23 +78,33 @@ position = Vector2(0, -250)
 script = ExtResource("11_6cf61")
 
 [node name="song1" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("12_wnfp1")
 
 [node name="song2" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("13_htqvt")
 
 [node name="song3" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("14_tiyub")
 
 [node name="song4" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("15_n21tn")
 
 [node name="song5" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("16_ytnax")
 
 [node name="song6" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("17_65pgu")
 
 [node name="song7" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("18_uqksv")
 
 [node name="song8" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("19_60752")
 
 [node name="song9" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("20_2847w")
 
 [node name="song10" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("21_rrdws")
 
 [connection signal="child_exiting_tree" from="Players" to="gameController" method="_on_players_child_exiting_tree"]
