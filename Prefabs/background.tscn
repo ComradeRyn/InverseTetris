@@ -6,4 +6,5 @@
 show_behind_parent = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.315, 1.344)
 texture = ExtResource("1_v1pvx")
