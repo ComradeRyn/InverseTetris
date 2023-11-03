@@ -30,7 +30,7 @@ script = ExtResource("8_x3f82")
 
 [node name="Boom" type="AudioStreamPlayer2D" parent="gameController"]
 stream = ExtResource("2_kfb8x")
-volume_db = 24.0
+volume_db = 12.0
 
 [node name="MainCamera" type="Camera2D" parent="."]
 position = Vector2(2.08165e-12, -250)
