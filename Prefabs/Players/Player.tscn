@@ -1,11 +1,10 @@
-[gd_scene load_steps=40 format=3 uid="uid://dv08usgmi7ngg"]
+[gd_scene load_steps=39 format=3 uid="uid://dv08usgmi7ngg"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_upd2l"]
 [ext_resource type="Texture2D" uid="uid://c1psge5h5uvoi" path="res://Sprites/Player/Player2.0.png" id="2_cfydo"]
 [ext_resource type="Script" path="res://Scripts/playerHurtbox.gd" id="3_xqf08"]
 [ext_resource type="AudioStream" uid="uid://c5tu8hltvk4qa" path="res://Audio/whoosh.mp3" id="4_pol1q"]
 [ext_resource type="AudioStream" uid="uid://bsekaxbnai6x" path="res://Audio/bonk.mp3" id="5_6ha87"]
-[ext_resource type="AudioStream" uid="uid://cl3alqk411k78" path="res://Audio/Boom.mp3" id="7_pjfd8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_moaj7"]
 
@@ -409,10 +408,6 @@ stream = ExtResource("4_pol1q")
 
 [node name="bounce" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_6ha87")
-
-[node name="death" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_pjfd8")
-volume_db = 24.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
