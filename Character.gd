@@ -11,6 +11,8 @@ var dashing = false
 var dashCoolingdown = false
 var isStunned = false
 
+@onready var animPlayer = get_node("AnimationPlayer")
+@onready var anim = get_node("PlayerAnim")
 
 @export var keyboard_jump : String
 @export var keyboard_dash : String
@@ -39,9 +41,11 @@ func _physics_process(delta):
 	# Handle Jump.
 	if jump and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		animPlayer.play("Jump")
 		$jump.play()
 
 	if dashing:
+		animPlayer.play("Dash")
 		velocity.x = direction * DASHSPEED
 		timeDashing += delta
 	if timeDashing >= DASHTIME:
@@ -51,11 +55,13 @@ func _physics_process(delta):
 		
 	# Get the input direction and handle the movement/deceleration.
 	if direction && dash && !dashing:
-		velocity.x += direction * DASHSPEED
 		dashing = true
+		$dash.play()
 	elif direction && !dashing:
+		animPlayer.play("Run")
 		velocity.x = direction * SPEED
 	elif !dashing:
 		velocity.x = move_toward(velocity.x, 0, SPEED/10)
+		animPlayer.play("Idle")
 
 	move_and_slide()

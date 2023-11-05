@@ -1,13 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgut2e8g0lb5x"]
+[gd_scene load_steps=3 format=3 uid="uid://bgut2e8g0lb5x"]
 
-[ext_resource type="PhysicsMaterial" uid="uid://bw47fhjnng2bq" path="res://PhysicsMaterial/NoFriction.tres" id="1_2wq7g"]
 [ext_resource type="Script" path="res://Scripts/Block.gd" id="1_6xij1"]
 [ext_resource type="Texture2D" uid="uid://dovuvhvi1ngkc" path="res://Sprites/Blocks.png" id="2_fyg35"]
 
 [node name="J-block" type="RigidBody2D"]
 position = Vector2(0, -1)
 mass = 50.0
-physics_material_override = ExtResource("1_2wq7g")
 lock_rotation = true
 script = ExtResource("1_6xij1")
 locationsDown = [-159, -100, -40, 20, 80, 140, 180]

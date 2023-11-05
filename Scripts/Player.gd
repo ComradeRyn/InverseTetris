@@ -74,9 +74,6 @@ func _physics_process(delta):
 		self.apply_central_impulse(Vector2(0, yVel))
 		$jump.play()
 	
-	if(yVel >= 0):
-		pass
-		#animPlayer.play("Fall")
 	if(get_colliding_bodies().size() == 0): #Doesnt account for celeste
 		grounded = false;
 		
