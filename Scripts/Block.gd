@@ -4,6 +4,7 @@ extends RigidBody2D
 @export var locationsDown : Array #location arrays for the different oreientation of the blocks
 @export var locationsUp : Array 
 var chosenRot = randi_range(0,3)
+var xVel = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready():
@@ -20,6 +21,7 @@ func _ready():
 
 func _process(delta):
 	var yVel = get_linear_velocity().y
+	
 	if(yVel <= 0):
 		self.set_meta("block", "passive")
 	else:

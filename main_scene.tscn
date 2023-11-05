@@ -4,7 +4,6 @@
 [ext_resource type="AudioStream" uid="uid://cl3alqk411k78" path="res://Audio/Boom.mp3" id="2_kfb8x"]
 [ext_resource type="Script" path="res://Scripts/MainCamera.gd" id="3_lumsg"]
 [ext_resource type="PackedScene" uid="uid://c1gecak3kptdq" path="res://Prefabs/Arena.tscn" id="4_fkhg6"]
-[ext_resource type="PackedScene" uid="uid://dv08usgmi7ngg" path="res://Prefabs/Players/Player.tscn" id="6_hou6m"]
 [ext_resource type="PackedScene" uid="uid://c7mmdas1cnnny" path="res://Prefabs/Players/Player3.tscn" id="8_ns2xt"]
 [ext_resource type="PackedScene" uid="uid://ee7hnq5q0rd4" path="res://Prefabs/Players/Player2.tscn" id="8_sbu4i"]
 [ext_resource type="Script" path="res://Scripts/GameController.gd" id="8_x3f82"]
@@ -21,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://bndmncvbo33ci" path="res://Music/Spring In My Step - Silent Partner.mp3" id="19_60752"]
 [ext_resource type="AudioStream" uid="uid://sc4bxi0nmvop" path="res://Music/Squirm Worm - TrackTribe.mp3" id="20_2847w"]
 [ext_resource type="AudioStream" uid="uid://lmslp5qfaoan" path="res://Music/The Mumbai Beat - Hanu Dixit.mp3" id="21_rrdws"]
+[ext_resource type="PackedScene" uid="uid://d2ayxn0snwc4x" path="res://Character.tscn" id="22_w762j"]
 
 [node name="MainScene" type="Node2D"]
 position = Vector2(0, 248)
@@ -41,13 +41,6 @@ script = ExtResource("3_lumsg")
 [node name="TileMap" parent="." instance=ExtResource("4_fkhg6")]
 
 [node name="Players" type="Node2D" parent="."]
-
-[node name="Player" parent="Players" instance=ExtResource("6_hou6m")]
-position = Vector2(-150, -10)
-keyboard_jump = "jump1"
-keyboard_dash = "dash1"
-keyboard_right = "right1"
-keyboard_left = "left1"
 
 [node name="Player2" parent="Players" instance=ExtResource("8_sbu4i")]
 position = Vector2(-50, -10)
@@ -107,5 +100,8 @@ stream = ExtResource("20_2847w")
 
 [node name="song10" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("21_rrdws")
+
+[node name="Node2D" parent="." instance=ExtResource("22_w762j")]
+position = Vector2(15, -267)
 
 [connection signal="child_exiting_tree" from="Players" to="gameController" method="_on_players_child_exiting_tree"]
