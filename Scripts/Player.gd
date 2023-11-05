@@ -67,7 +67,7 @@ func _physics_process(delta):
 	var yVel = self.get_linear_velocity().y
 	
 	if (isW && grounded && !jumpCooldown): #Jumping
-		#animPlayer.play("Jump")
+		animPlayer.play("Jump")
 		grounded = false;
 		jumpCooldown = true;
 		yVel = -400
@@ -83,19 +83,17 @@ func _physics_process(delta):
 	if isD && !isA && !isDashing && !isStunned: #Move Right
 		anim.flip_h = false 
 		if grounded:
-			pass
-			#animPlayer.play("Run")
+			animPlayer.play("Run")
 		self.set_linear_velocity(Vector2(SPEED, yVel))
 		
 	elif isA && !isD && !isDashing && !isStunned: #Move Left
 		anim.flip_h = true #flip sprite direction
 		if grounded:
-			pass
-			#animPlayer.play("Run")
+			animPlayer.play("Run")
 		self.set_linear_velocity(Vector2(-SPEED,yVel))
 		
 	else: #Not Moving
-		if !isDashing:
+		if !isDashing && grounded:
 			animPlayer.play("Idle")
 		if(!isDashing && !isStunned):
 			self.set_linear_velocity(Vector2(0,yVel));
