@@ -1,106 +1,104 @@
-[gd_scene load_steps=39 format=3 uid="uid://dv08usgmi7ngg"]
+[gd_scene load_steps=39 format=3 uid="uid://cxxvuahb3im2q"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_upd2l"]
-[ext_resource type="Texture2D" uid="uid://c1psge5h5uvoi" path="res://Sprites/Player/Player2.0.png" id="2_cfydo"]
-[ext_resource type="Script" path="res://Scripts/playerHurtbox.gd" id="3_xqf08"]
-[ext_resource type="AudioStream" uid="uid://c5tu8hltvk4qa" path="res://Audio/whoosh.mp3" id="4_pol1q"]
-[ext_resource type="AudioStream" uid="uid://bsekaxbnai6x" path="res://Audio/bonk.mp3" id="5_6ha87"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_moaj7"]
+[ext_resource type="Script" path="res://Scripts/Character.gd" id="1_maeg0"]
+[ext_resource type="Texture2D" uid="uid://c1psge5h5uvoi" path="res://Sprites/Player/Player2.0.png" id="2_4oswh"]
+[ext_resource type="Script" path="res://Scripts/playerHurtbox.gd" id="3_3oap0"]
+[ext_resource type="AudioStream" uid="uid://c5tu8hltvk4qa" path="res://Audio/whoosh.mp3" id="4_75cv7"]
+[ext_resource type="AudioStream" uid="uid://bsekaxbnai6x" path="res://Audio/bonk.mp3" id="5_rnhs6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jh776"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8b5xd"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(16, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eu0qc"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjbq2"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(48, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gj2e7"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(64, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1yj2f"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ytp8x"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cnryd"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lxhjn"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0wja6"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(16, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ioeur"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(32, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_77r5p"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(48, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mtqqc"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(64, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fipas"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_66afu"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1kgoi"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kfod8"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(48, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_urni8"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(64, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smso0"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(80, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yauj7"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(96, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_snjeu"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(112, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hhuc"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(128, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c2qu6"]
-atlas = ExtResource("2_cfydo")
+atlas = ExtResource("2_4oswh")
 region = Rect2(144, 16, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2ajw0"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jil2m"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -191,10 +189,6 @@ animations = [{
 "name": &"Run",
 "speed": 5.0
 }]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_t8exn"]
-a = Vector2(-3, -10)
-b = Vector2(3, -10)
 
 [sub_resource type="Animation" id="Animation_d5p0g"]
 resource_name = "Dash"
@@ -377,45 +371,51 @@ _data = {
 "Run": SubResource("Animation_3wm2a")
 }
 
-[node name="Player" type="RigidBody2D"]
-max_contacts_reported = 2
-contact_monitor = true
-script = ExtResource("1_upd2l")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iou50"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_moaj7")
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_k5agt"]
+a = Vector2(-7, -10)
+b = Vector2(7, -10)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_maeg0")
+keyboard_jump = "jump1"
+keyboard_dash = "dash1"
+keyboard_right = "right1"
+keyboard_left = "left1"
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 1, 0.160784, 1)
 scale = Vector2(1.25, 1.25)
-sprite_frames = SubResource("SpriteFrames_2ajw0")
+sprite_frames = SubResource("SpriteFrames_jil2m")
 animation = &"Idle"
-
-[node name="Hurtbox" type="Area2D" parent="."]
-scale = Vector2(2.72, 1)
-script = ExtResource("3_xqf08")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(0, 1)
-shape = SubResource("SegmentShape2D_t8exn")
-one_way_collision_margin = 0.0
-debug_color = Color(0.836122, 0.0505172, 0.0285799, 0.42)
-
-[node name="jump" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_pol1q")
-pitch_scale = 2.04
-
-[node name="dash" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_pol1q")
-
-[node name="bounce" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_6ha87")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_scajb")
 }
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered"]
-[connection signal="body_entered" from="Hurtbox" to="Hurtbox" method="_on_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_iou50")
+
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("3_3oap0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 1)
+shape = SubResource("SegmentShape2D_k5agt")
+one_way_collision_margin = 0.0
+debug_color = Color(0.836122, 0.0505172, 0.0285799, 0.42)
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_75cv7")
+pitch_scale = 2.04
+
+[node name="dash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_75cv7")
+
+[node name="bounce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_rnhs6")
+
+[connection signal="area_entered" from="Hitbox" to="Hitbox" method="_on_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="Hitbox" method="_on_body_entered"]

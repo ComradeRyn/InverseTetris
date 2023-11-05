@@ -10,6 +10,7 @@ var timeDashing = 0
 var dashing = false
 var dashCoolingdown = false
 var isStunned = false
+var grounded = true
 
 @onready var animPlayer = get_node("AnimationPlayer")
 @onready var anim = get_node("PlayerAnim")
@@ -37,11 +38,15 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		
+	elif is_on_floor():
+		grounded = true
 
 	# Handle Jump.
 	if jump and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		animPlayer.play("Jump")
+		grounded = false
 		$jump.play()
 
 	if dashing:
@@ -52,16 +57,21 @@ func _physics_process(delta):
 		dashing = false
 		timeDashing = 0
 		
-		
+	
 	# Get the input direction and handle the movement/deceleration.
 	if direction && dash && !dashing:
 		dashing = true
 		$dash.play()
 	elif direction && !dashing:
-		animPlayer.play("Run")
+		if grounded:
+			animPlayer.play("Run")
+		if direction < 0:
+			anim.flip_h = true
+		else:
+			anim.flip_h = false
 		velocity.x = direction * SPEED
 	elif !dashing:
 		velocity.x = move_toward(velocity.x, 0, SPEED/10)
-		animPlayer.play("Idle")
-
+		if grounded:
+			animPlayer.play("Idle")
 	move_and_slide()

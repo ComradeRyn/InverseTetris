@@ -1,11 +1,10 @@
-[gd_scene load_steps=40 format=3 uid="uid://d2ayxn0snwc4x"]
+[gd_scene load_steps=39 format=3 uid="uid://d2ayxn0snwc4x"]
 
-[ext_resource type="Script" path="res://Character.gd" id="1_3th4q"]
+[ext_resource type="Script" path="res://Scripts/Character.gd" id="1_3th4q"]
 [ext_resource type="Texture2D" uid="uid://c1psge5h5uvoi" path="res://Sprites/Player/Player2.0.png" id="2_x3spb"]
 [ext_resource type="Script" path="res://Scripts/playerHurtbox.gd" id="3_nju2m"]
 [ext_resource type="AudioStream" uid="uid://c5tu8hltvk4qa" path="res://Audio/whoosh.mp3" id="4_h17gi"]
 [ext_resource type="AudioStream" uid="uid://bsekaxbnai6x" path="res://Audio/bonk.mp3" id="5_akboj"]
-[ext_resource type="AudioStream" uid="uid://cl3alqk411k78" path="res://Audio/Boom.mp3" id="6_xvbnh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jh776"]
 atlas = ExtResource("2_x3spb")
@@ -375,8 +374,8 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iou50"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_k5agt"]
-a = Vector2(-3, -10)
-b = Vector2(3, -10)
+a = Vector2(-7, -10)
+b = Vector2(7, -10)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_3th4q")
@@ -386,6 +385,7 @@ keyboard_right = "right1"
 keyboard_left = "left1"
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.4, 1, 1, 1)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_jil2m")
 animation = &"Idle"
@@ -396,6 +396,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_iou50")
 
 [node name="Hitbox" type="Area2D" parent="."]
@@ -416,10 +417,6 @@ stream = ExtResource("4_h17gi")
 
 [node name="bounce" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_akboj")
-
-[node name="death" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_xvbnh")
-volume_db = 24.0
 
 [connection signal="area_entered" from="Hitbox" to="Hitbox" method="_on_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="Hitbox" method="_on_body_entered"]
