@@ -21,11 +21,12 @@ var isStunned = false
 @export var controller_right : String
 @export var controller_left : String
 
+@onready var animPlayer = get_node("AnimationPlayer")
 @onready var anim = get_node("PlayerAnim")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	anim.play("Idle")
+	animPlayer.play("Idle")
 	self.lock_rotation = true;
 	self.set_meta("type", "player")    # set myNode type to "enemy"
 	
@@ -66,35 +67,46 @@ func _physics_process(delta):
 	var yVel = self.get_linear_velocity().y
 	
 	if (isW && grounded && !jumpCooldown): #Jumping
+		animPlayer.play("Jump")
 		grounded = false;
 		jumpCooldown = true;
 		yVel = -400
 		self.apply_central_impulse(Vector2(0, yVel))
 		$jump.play()
 	
+	if(yVel >= 0):
+		pass
+		#animPlayer.play("Fall")
 	if(get_colliding_bodies().size() == 0): #Doesnt account for celeste
 		grounded = false;
 		
 	if isD && !isA && !isDashing && !isStunned: #Move Right
-		anim.play("Run")
+		anim.flip_h = false 
+		if grounded:
+			animPlayer.play("Run")
 		self.set_linear_velocity(Vector2(SPEED, yVel))
 		
 	elif isA && !isD && !isDashing && !isStunned: #Move Left
-		anim.play("Run")
+		anim.flip_h = true #flip sprite direction
+		if grounded:
+			animPlayer.play("Run")
 		self.set_linear_velocity(Vector2(-SPEED,yVel))
 		
 	else: #Not Moving
-		anim.play("Idle")
+		if !isDashing && grounded:
+			animPlayer.play("Idle")
 		if(!isDashing && !isStunned):
 			self.set_linear_velocity(Vector2(0,yVel));
 		
 	if isS && isD && !isDashing && !isStunned:
+		animPlayer.play("Dash")
 		isDashing = true
 		dashCoolingdown = true
 		self.apply_central_impulse(Vector2(SPEED * 1.05,0))
 		$dash.play()
 	
 	elif isS && isA && !isDashing && !isStunned:
+		animPlayer.play("Dash")
 		isDashing = true
 		dashCoolingdown = true
 		self.apply_central_impulse(Vector2(-SPEED * 1.05,0))
