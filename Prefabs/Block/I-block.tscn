@@ -4,8 +4,8 @@
 [ext_resource type="PhysicsMaterial" uid="uid://bw47fhjnng2bq" path="res://PhysicsMaterial/NoFriction.tres" id="1_jq1oq"]
 [ext_resource type="Texture2D" uid="uid://16i1cqcp7g37" path="res://Sprites/I-block.png" id="2_0yb7g"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbfpy"]
-size = Vector2(16, 4)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpmj0"]
+size = Vector2(80, 20)
 
 [node name="Iblock" type="RigidBody2D"]
 mass = 50.0
@@ -23,7 +23,6 @@ region_rect = Rect2(0, 0, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
-scale = Vector2(5, 5)
-shape = SubResource("RectangleShape2D_dbfpy")
+shape = SubResource("RectangleShape2D_bpmj0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
