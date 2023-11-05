@@ -23,7 +23,7 @@ func _ready():
 	elif(chosenSong == 9):
 		$song9.play()
 	elif(chosenSong == 10):
-		$song10.play
+		$song10.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bcy1oxkawf0t7" path="res://Prefabs/background.tscn" id="9_g0po4"]
 [ext_resource type="Script" path="res://Music.gd" id="11_6cf61"]
 [ext_resource type="AudioStream" uid="uid://dyys335uolkxo" path="res://Music/Adana - Teental - Aditya Verma, Subir Dev.mp3" id="12_wnfp1"]
-[ext_resource type="AudioStream" uid="uid://blj21wfmc634d" path="res://Music/AppleSong2.wav" id="13_htqvt"]
+[ext_resource type="AudioStream" uid="uid://bu4wyifr7jtje" path="res://Music/AppleSong2.mp3" id="13_i72hp"]
 [ext_resource type="AudioStream" uid="uid://chg3syxhwmumf" path="res://Music/Crash & Burn - Aakash Gandhi.mp3" id="14_tiyub"]
 [ext_resource type="AudioStream" uid="uid://dgavleqp7xs2y" path="res://Music/elf-singing-89296.mp3" id="15_n21tn"]
 [ext_resource type="AudioStream" uid="uid://b15evfjwls3jb" path="res://Music/guitar-riff-159089.mp3" id="16_ytnax"]
@@ -81,7 +81,8 @@ script = ExtResource("11_6cf61")
 stream = ExtResource("12_wnfp1")
 
 [node name="song2" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource("13_htqvt")
+editor_description = "apple song"
+stream = ExtResource("13_i72hp")
 
 [node name="song3" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("14_tiyub")
