@@ -1,15 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://8y7qhip2hqvu"]
+[gd_scene load_steps=4 format=3 uid="uid://8y7qhip2hqvu"]
 
+[ext_resource type="Script" path="res://Prefabs/StaticIBlock.gd" id="1_5bbx5"]
 [ext_resource type="Texture2D" uid="uid://dovuvhvi1ngkc" path="res://Sprites/Blocks.png" id="1_ehmjv"]
-[ext_resource type="PhysicsMaterial" uid="uid://bw47fhjnng2bq" path="res://PhysicsMaterial/NoFriction.tres" id="1_je1bg"]
-[ext_resource type="Script" path="res://Scripts/BlockStatic.gd" id="2_eoasl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otixl"]
 size = Vector2(16, 4)
 
-[node name="I-Block" type="AnimatableBody2D"]
-physics_material_override = ExtResource("1_je1bg")
-script = ExtResource("2_eoasl")
+[node name="I-Block" type="CharacterBody2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_5bbx5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ehmjv")

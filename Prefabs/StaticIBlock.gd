@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
+
 const LIFETIME = 10
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
 
 @export var locationsDown : Array #location arrays for the different oreientation of the blocks
 @export var locationsUp : Array 
@@ -20,8 +20,8 @@ func _ready():
 	else:
 		self.set_rotation(3 * PI/2)
 
-
 func _physics_process(delta):
+	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	var yVel = velocity.y
@@ -32,4 +32,4 @@ func _physics_process(delta):
 		self.set_meta("block", "hostile")
 	if(time >= LIFETIME):
 		self.queue_free()
-	
+	move_and_slide()
