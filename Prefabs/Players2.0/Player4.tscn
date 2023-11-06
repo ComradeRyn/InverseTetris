@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bnmkjhdktxvm5"]
+[gd_scene load_steps=39 format=3 uid="uid://c3exaxcn8s3h5"]
 
 [ext_resource type="Script" path="res://Scripts/Character.gd" id="1_0ot7n"]
 [ext_resource type="Texture2D" uid="uid://c1psge5h5uvoi" path="res://Sprites/Player/Player2.0.png" id="2_6iyxa"]
@@ -397,6 +397,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 0.157)
 shape = SubResource("RectangleShape2D_iou50")
 
