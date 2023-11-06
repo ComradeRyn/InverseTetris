@@ -18,8 +18,9 @@ func _ready():
 		self.set_rotation(3 * PI/2)
 
 
-func _process(delta):
+func _physics_process(delta):
 	var yVel = get_linear_velocity().y
+	set_axis_velocity(Vector2(0, yVel))
 	if(yVel <= 0):
 		self.set_meta("block", "passive")
 	else:
