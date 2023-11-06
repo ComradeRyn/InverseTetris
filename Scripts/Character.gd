@@ -49,6 +49,7 @@ func _physics_process(delta):
 		grounded = false
 		$jump.play()
 
+	# Dashing mechanic
 	if dashing:
 		animPlayer.play("Dash")
 		velocity.x = direction * DASHSPEED
