@@ -23,7 +23,7 @@ func _physics_process(delta):
 	time += delta
 	var yVel = get_linear_velocity().y
 	set_axis_velocity(Vector2(0, yVel))
-	if(yVel <= 0):
+	if(yVel <= 10):
 		self.set_meta("block", "passive")
 	else:
 		self.set_meta("block", "hostile")

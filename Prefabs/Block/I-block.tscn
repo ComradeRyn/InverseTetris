@@ -7,7 +7,8 @@
 size = Vector2(80, 20)
 
 [node name="Iblock" type="RigidBody2D"]
-mass = 50.0
+collision_layer = 3
+collision_mask = 2
 lock_rotation = true
 script = ExtResource("1_15me4")
 locationsDown = [-160, -80, 0, 80, 160]
