@@ -3,3 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://d2ayxn0snwc4x" path="res://Prefabs/Players2.0/Player1.tscn" id="1_peti3"]
 
 [node name="Player" instance=ExtResource("1_peti3")]
+keyboard_jump = "jump4"
+keyboard_dash = "dash4"
+keyboard_right = "right4"
+keyboard_left = "left4"
+
+[node name="PlayerAnim" parent="." index="0"]
+modulate = Color(0.760784, 0.411765, 1, 1)
