@@ -372,7 +372,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iou50"]
-size = Vector2(19.5, 19.625)
+size = Vector2(19.5, 19.75)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_k5agt"]
 a = Vector2(-7, -10)
@@ -397,7 +397,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.188)
+position = Vector2(0, 0.125)
 shape = SubResource("RectangleShape2D_iou50")
 
 [node name="Hitbox" type="Area2D" parent="."]
