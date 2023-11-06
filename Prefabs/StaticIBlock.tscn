@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://8y7qhip2hqvu"]
+
+[ext_resource type="Texture2D" uid="uid://dovuvhvi1ngkc" path="res://Sprites/Blocks.png" id="1_ehmjv"]
+[ext_resource type="PhysicsMaterial" uid="uid://bw47fhjnng2bq" path="res://PhysicsMaterial/NoFriction.tres" id="1_je1bg"]
+[ext_resource type="Script" path="res://Scripts/BlockStatic.gd" id="2_eoasl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otixl"]
+size = Vector2(16, 4)
+
+[node name="I-Block" type="AnimatableBody2D"]
+physics_material_override = ExtResource("1_je1bg")
+script = ExtResource("2_eoasl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ehmjv")
+hframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_otixl")
