@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cbqavvfe0k21i"]
+
+[node name="Player"]
+keyboard_jump = "jump2"
+keyboard_dash = "dash2"
+keyboard_right = "right2"
+keyboard_left = "left2"
+
+[node name="PlayerAnim" parent="." index="0"]
+modulate = Color(0, 1, 0.160784, 1)
