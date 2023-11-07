@@ -47,7 +47,7 @@ texture_pressed = ExtResource("4_rote5")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(-445, 0.999996)
-scale = Vector2(1.34165, 1.34165)
+scale = Vector2(1.33683, 1.33683)
 texture = ExtResource("6_ymgk3")
 region_enabled = true
 region_rect = Rect2(112, 80, 768, 512)
