@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbb2jp42nvu16"]
+[gd_scene load_steps=9 format=3 uid="uid://cbb2jp42nvu16"]
 
 [ext_resource type="Texture2D" uid="uid://dy80jy6u5ygbr" path="res://Sprites/UI/PlayButtonUnpressed.png" id="1_8rmxg"]
 [ext_resource type="Script" path="res://main_menu.gd" id="1_xxbnn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://x5mjxodx8vhf" path="res://Sprites/UI/QuitButtonPressed.png" id="4_rote5"]
 [ext_resource type="Texture2D" uid="uid://cpbfymrs7iv7h" path="res://Sprites/Player/conceptArt.png" id="6_ymgk3"]
 [ext_resource type="Texture2D" uid="uid://bj442xx6x0ccn" path="res://Sprites/TestrisSurvivor.jpg" id="7_k788g"]
+[ext_resource type="AudioStream" uid="uid://cgcjtiuad2jye" path="res://Audio/SIREN.mp3" id="8_oi8js"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_xxbnn")
@@ -54,9 +55,13 @@ region_rect = Rect2(112, 80, 768, 512)
 
 [node name="TestrisSurvivor" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(567, 7)
+position = Vector2(573, 1)
 scale = Vector2(0.847898, 0.847898)
 texture = ExtResource("7_k788g")
+
+[node name="Song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_oi8js")
+volume_db = 24.0
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
