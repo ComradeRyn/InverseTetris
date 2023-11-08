@@ -11,6 +11,9 @@ var dashing = false
 var dashCoolingdown = false
 var isStunned = false
 var grounded = true
+var justDashed = false
+var dashDirection = 0
+
 
 @onready var animPlayer = get_node("AnimationPlayer")
 @onready var anim = get_node("PlayerAnim")
@@ -35,6 +38,9 @@ func _physics_process(delta):
 	var direction = Input.get_axis(keyboard_left, keyboard_right)
 	var jump = Input.is_action_pressed(keyboard_jump)
 	var dash = Input.is_action_just_pressed(keyboard_dash)
+	var justDashed = Input.is_action_just_pressed(keyboard_dash)
+	
+	print(dashing)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -48,10 +54,14 @@ func _physics_process(delta):
 		animPlayer.play("Jump")
 		grounded = false
 		$jump.play()
-
+	
+	if justDashed:
+		dashDirection = direction
+		justDashed = false
+		
 	if dashing:
 		animPlayer.play("Dash")
-		velocity.x = direction * DASHSPEED
+		velocity.x =  dashDirection * DASHSPEED
 		timeDashing += delta
 	if timeDashing >= DASHTIME:
 		dashing = false

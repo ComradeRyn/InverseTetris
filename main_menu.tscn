@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cbb2jp42nvu16"]
+[gd_scene load_steps=11 format=3 uid="uid://cchvc6brlb47a"]
 
 [ext_resource type="Texture2D" uid="uid://dy80jy6u5ygbr" path="res://Sprites/UI/PlayButtonUnpressed.png" id="1_8rmxg"]
 [ext_resource type="Script" path="res://main_menu.gd" id="1_xxbnn"]
@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://btnc27g4gbuja" path="res://Sprites/UI/QuitButtonUnpressed.png" id="3_m0q0l"]
 [ext_resource type="Texture2D" uid="uid://x5mjxodx8vhf" path="res://Sprites/UI/QuitButtonPressed.png" id="4_rote5"]
 [ext_resource type="Texture2D" uid="uid://cpbfymrs7iv7h" path="res://Sprites/Player/conceptArt.png" id="6_ymgk3"]
-[ext_resource type="Texture2D" uid="uid://bj442xx6x0ccn" path="res://Sprites/TestrisSurvivor.jpg" id="7_k788g"]
+[ext_resource type="Texture2D" path="res://Sprites/TestrisSurvivor.jpg" id="7_k788g"]
 [ext_resource type="AudioStream" uid="uid://cgcjtiuad2jye" path="res://Audio/SIREN.mp3" id="8_oi8js"]
-[ext_resource type="AudioStream" uid="uid://dusmepgmripvb" path="res://Audio/Bye.mp3" id="9_dc3nj"]
-[ext_resource type="AudioStream" uid="uid://dsg648hxd0dci" path="res://Audio/male_exclamations.mp3" id="10_tn165"]
+[ext_resource type="AudioStream" path="res://Audio/Bye.mp3" id="9_dc3nj"]
+[ext_resource type="AudioStream" path="res://Audio/male_exclamations.mp3" id="10_tn165"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_xxbnn")
