@@ -33,14 +33,20 @@ var dashDirection = 0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _ready():
+	self.set_meta("type", "player")
+
+func _bounce():
+	pass
 
 func _physics_process(delta):
+	var lastCollision = get_last_slide_collision()
+	
 	var direction = Input.get_axis(keyboard_left, keyboard_right)
 	var jump = Input.is_action_pressed(keyboard_jump)
 	var dash = Input.is_action_just_pressed(keyboard_dash)
 	var justDashed = Input.is_action_just_pressed(keyboard_dash)
-	
-	print(dashing)
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -67,6 +73,15 @@ func _physics_process(delta):
 		dashing = false
 		timeDashing = 0
 		
+#	if(lastCollision != null):
+#		if(lastCollision.get_collider().get_meta("type") == "block") && abs(velocity.x) > SPEED:
+#			print("sus")
+#			isStunned = true
+#			dashing = false
+#	if(isStunned):
+#		velocity.x = dashDirection * -1 * DASHSPEED
+#		if(abs(velocity.x) >= SPEED):
+#			isStunned = false
 	
 	# Get the input direction and handle the movement/deceleration.
 	if direction && dash && !dashing:
