@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://16i1cqcp7g37" path="res://Sprites/I-block.png" id="2_0yb7g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpmj0"]
-size = Vector2(80, 20)
+size = Vector2(78, 18)
 
 [node name="Iblock" type="RigidBody2D"]
 collision_layer = 3

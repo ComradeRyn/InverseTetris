@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dovuvhvi1ngkc" path="res://Sprites/Blocks.png" id="2_ojeso"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yu7hm"]
+size = Vector2(19, 19)
 
 [node name="O-block" type="RigidBody2D"]
 collision_layer = 3
