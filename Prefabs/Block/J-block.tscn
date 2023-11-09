@@ -7,7 +7,6 @@
 position = Vector2(0, -1)
 collision_layer = 3
 collision_mask = 2
-mass = 0.01
 lock_rotation = true
 script = ExtResource("1_6xij1")
 locationsDown = [-160, -140, -120, -100, -80, -60, -40, -20, 0, 20, 40, 60, 80, 100, 120, 140, 160, 180]
