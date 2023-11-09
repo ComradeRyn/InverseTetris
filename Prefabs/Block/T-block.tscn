@@ -8,14 +8,15 @@ collision_layer = 3
 collision_mask = 2
 lock_rotation = true
 script = ExtResource("1_mdt6u")
-locationsDown = [-160, -140, -120, -100, -80, -60, -40, -20, 0, 20, 40, 60, 80, 100, 120, 140, 160, 180]
-locationsUp = [-160, -140, -120, -100, -80, -60, -40, -20, 0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200]
+locationsDown = [-170, -150, -130, -110, -90, -70, -50, -30, -10, 10, 30, 50, 70, 90, 110, 130, 150, 170]
+locationsUp = [-180, -160, -140, -120, -100, -80, -60, -40, -20, 0, 20, 40, 60, 80, 100, 120, 140, 160, 180]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
 texture = ExtResource("2_kh8mh")
 region_enabled = true
-region_rect = Rect2(96, 0, 16, 16)
+region_rect = Rect2(96, 0, 12, 8)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(10, 20)
 polygon = PackedVector2Array(-40, 0, 20, 0, 20, -20, 0, -20, 0, -40, -20, -40, -20, -20, -40, -20)
