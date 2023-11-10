@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba4nr2g042n7h"]
+[gd_scene load_steps=5 format=3 uid="uid://ba4nr2g042n7h"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://bw47fhjnng2bq" path="res://PhysicsMaterial/NoFriction.tres" id="1_2lifh"]
 [ext_resource type="Script" path="res://Scripts/Block.gd" id="1_tmn6c"]
 [ext_resource type="Texture2D" uid="uid://dovuvhvi1ngkc" path="res://Sprites/Blocks.png" id="2_ojeso"]
 
@@ -8,6 +9,7 @@
 [node name="O-block" type="RigidBody2D"]
 collision_layer = 3
 collision_mask = 2
+physics_material_override = ExtResource("1_2lifh")
 lock_rotation = true
 script = ExtResource("1_tmn6c")
 locationsDown = [-180, -160, -140, -120, -100, -80, -60, -40, -20, 0, 20, 40, 60, 80, 100, 120, 140, 160, 180]
