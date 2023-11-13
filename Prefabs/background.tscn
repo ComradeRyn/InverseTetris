@@ -4,6 +4,7 @@
 
 [node name="Background" type="Node2D"]
 show_behind_parent = true
+z_index = -2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-4, 11)

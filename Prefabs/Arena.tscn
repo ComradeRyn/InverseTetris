@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://c1gecak3kptdq"]
+[gd_scene load_steps=18 format=3 uid="uid://c1gecak3kptdq"]
 
 [ext_resource type="Texture2D" uid="uid://bi5tmk0npkl7x" path="res://Sprites/Tile.png" id="1_detkd"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_bx75m"]
 [ext_resource type="Texture2D" uid="uid://bap0rgo4j6a23" path="res://Sprites/WallTile.png" id="2_rxpjb"]
 [ext_resource type="PhysicsMaterial" uid="uid://bw47fhjnng2bq" path="res://PhysicsMaterial/NoFriction.tres" id="4_pxqbi"]
 [ext_resource type="Script" path="res://Scripts/InvisWall.gd" id="5_gxs4d"]
+[ext_resource type="Texture2D" uid="uid://dx354vedr21be" path="res://Sprites/SpaceShip.png" id="6_t8yrw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m5dld"]
 texture = ExtResource("1_detkd")
@@ -40,11 +41,41 @@ size = Vector2(564.35, 23.1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fowp"]
 size = Vector2(4.00001, 36)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxcsm"]
+atlas = ExtResource("6_t8yrw")
+region = Rect2(0, 0, 480, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dxym"]
+atlas = ExtResource("6_t8yrw")
+region = Rect2(480, 0, 480, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pol6"]
+atlas = ExtResource("6_t8yrw")
+region = Rect2(960, 0, 480, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ypl1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxcsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dxym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pol6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="TileMap" type="TileMap"]
+z_index = -1
 scale = Vector2(5, 5)
 tile_set = SubResource("TileSet_hal6p")
 format = 2
-layer_0/tile_data = PackedInt32Array(65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 65534, 0, 0, 65533, 0, 0, 65532, 0, 0, 65531, 0, 0, 5, 0, 0, 65530, 0, 0, 65525, 0, 0, 65526, 0, 0, 65527, 0, 0, 65528, 0, 0, 65529, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, -1310710, 1, 0, -1245174, 1, 0, -1179638, 1, 0, -1114102, 1, 0, -1048566, 1, 0, -983030, 1, 0, -917494, 1, 0, -851958, 1, 0, -786422, 1, 0, -720886, 1, 0, -655350, 1, 0, -589814, 1, 0, -524278, 1, 0, -458742, 1, 0, -393206, 1, 0, -327670, 1, 0, -262134, 1, 0, -196598, 1, 0, -131062, 1, 0, -65526, 1, 0, -1114123, 1, 0, -1048587, 1, 0, -983051, 1, 0, -917515, 1, 0, -851979, 1, 0, -786443, 1, 0, -720907, 1, 0, -655371, 1, 0, -589835, 1, 0, -524299, 1, 0, -458763, 1, 0, -393227, 1, 0, -327691, 1, 0, -262155, 1, 0, -196619, 1, 0, -131083, 1, 0, -65547, 1, 0, -11, 1, 0, -1179659, 1, 0, -1245195, 1, 0, -1310731, 1, 0, -1376246, 1, 0, -1507318, 1, 0, -1441782, 1, 0, -1376267, 1, 0, -1441803, 1, 0)
+layer_0/tile_data = PackedInt32Array(65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 65534, 0, 0, 65533, 0, 0, 65532, 0, 0, 65531, 0, 0, 5, 0, 0, 65530, 0, 0, 65526, 0, 0, 65527, 0, 0, 65528, 0, 0, 65529, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, -1310710, 1, 0, -1245174, 1, 0, -1179638, 1, 0, -1114102, 1, 0, -1048566, 1, 0, -983030, 1, 0, -917494, 1, 0, -851958, 1, 0, -786422, 1, 0, -720886, 1, 0, -655350, 1, 0, -589814, 1, 0, -524278, 1, 0, -458742, 1, 0, -393206, 1, 0, -327670, 1, 0, -262134, 1, 0, -196598, 1, 0, -131062, 1, 0, -65526, 1, 0, -1114123, 1, 0, -1048587, 1, 0, -983051, 1, 0, -917515, 1, 0, -851979, 1, 0, -786443, 1, 0, -720907, 1, 0, -655371, 1, 0, -589835, 1, 0, -524299, 1, 0, -458763, 1, 0, -393227, 1, 0, -327691, 1, 0, -262155, 1, 0, -196619, 1, 0, -131083, 1, 0, -65547, 1, 0, -11, 1, 0, -1179659, 1, 0, -1245195, 1, 0, -1310731, 1, 0, -1376246, 1, 0, -1507318, 1, 0, -1441782, 1, 0, -1376267, 1, 0, -1441803, 1, 0)
 script = ExtResource("2_bx75m")
 
 [node name="InvisWall" type="RigidBody2D" parent="."]
@@ -82,3 +113,8 @@ shape = SubResource("RectangleShape2D_7fowp")
 [node name="rightKillZone" type="CollisionShape2D" parent="killZone"]
 position = Vector2(42, -110)
 shape = SubResource("RectangleShape2D_7fowp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -50)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_2ypl1")
