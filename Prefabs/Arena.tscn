@@ -114,7 +114,7 @@ shape = SubResource("RectangleShape2D_7fowp")
 position = Vector2(42, -110)
 shape = SubResource("RectangleShape2D_7fowp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Ship" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -50)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_2ypl1")
