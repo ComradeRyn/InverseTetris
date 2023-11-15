@@ -21,5 +21,4 @@ func randomOffset():
 
 
 func _on_players_child_exiting_tree(node):
-	print("pee")
 	apply_shake()

@@ -11,5 +11,5 @@ func _on_quit_pressed():
 
 func _on_play_pressed():
 	$PlayGame.play()
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(.25).timeout
 	get_tree().change_scene_to_file("res://main_scene.tscn")
