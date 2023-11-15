@@ -16,6 +16,5 @@ func _physics_process(delta):
 	
 	var incrementAmount = incrementRate * delta #Ship moves faster as time goes on
 	speed += incrementAmount
-	print(speed)
 	if speed >= 2:
 		speed = 2
