@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqbd1pyfex7ia"]
+
+[ext_resource type="Script" path="res://winner.gd" id="1_ro6xu"]
+[ext_resource type="AudioStream" uid="uid://dsg648hxd0dci" path="res://Audio/male_exclamations.mp3" id="2_j5yav"]
+
+[node name="Winner" type="Node2D"]
+script = ExtResource("1_ro6xu")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 225.0
+offset_top = 87.0
+offset_right = 467.0
+offset_bottom = 224.0
+text = "Winner! :)
+
+press r to go back"
+
+[node name="Win" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_j5yav")
