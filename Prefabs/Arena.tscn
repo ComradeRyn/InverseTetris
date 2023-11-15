@@ -66,7 +66,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_0pol6")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -118,3 +118,4 @@ shape = SubResource("RectangleShape2D_7fowp")
 position = Vector2(0, -50)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_2ypl1")
+animation = &"idle"

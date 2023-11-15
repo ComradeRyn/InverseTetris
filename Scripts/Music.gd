@@ -24,8 +24,3 @@ func _ready():
 		$song9.play()
 	elif(chosenSong == 10):
 		$song10.play()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

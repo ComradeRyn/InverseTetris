@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://8y7qhip2hqvu"]
 
-[ext_resource type="Script" path="res://Prefabs/StaticIBlock.gd" id="1_5bbx5"]
+[ext_resource type="Script" path="res://Scripts/StaticIBlock.gd" id="1_5bbx5"]
 [ext_resource type="Texture2D" uid="uid://dovuvhvi1ngkc" path="res://Sprites/Blocks.png" id="1_ehmjv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otixl"]

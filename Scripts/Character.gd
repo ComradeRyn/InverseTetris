@@ -39,8 +39,7 @@ func _physics_process(delta):
 	var jump = Input.is_action_pressed(keyboard_jump)
 	var dash = Input.is_action_just_pressed(keyboard_dash)
 	var justDashed = Input.is_action_just_pressed(keyboard_dash)
-	
-	print(dashing)
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta

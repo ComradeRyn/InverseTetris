@@ -15,10 +15,6 @@ run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
-[autoload]
-
-MainCamera="*res://Scripts/MainCamera.gd"
-
 [display]
 
 window/stretch/mode="viewport"

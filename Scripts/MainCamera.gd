@@ -9,10 +9,6 @@ var shakeStrength: float = 0.0
 
 func apply_shake():
 	shakeStrength = randomStrength
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -22,3 +18,8 @@ func _process(delta):
 		
 func randomOffset():
 	return Vector2 (rng.randf_range(-shakeStrength,shakeStrength),rng.randf_range(-shakeStrength,shakeStrength) )
+
+
+func _on_players_child_exiting_tree(node):
+	print("pee")
+	apply_shake()
