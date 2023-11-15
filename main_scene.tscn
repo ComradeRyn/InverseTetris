@@ -18,8 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://cqcolbh4eqt0n" path="res://Music/Raag Pilu - Sandeep Das, Adhiraj Chaudhuri, Bivakar Chaudhuri.mp3" id="18_uqksv"]
 [ext_resource type="AudioStream" uid="uid://bndmncvbo33ci" path="res://Music/Spring In My Step - Silent Partner.mp3" id="19_60752"]
 [ext_resource type="AudioStream" uid="uid://sc4bxi0nmvop" path="res://Music/Squirm Worm - TrackTribe.mp3" id="20_2847w"]
-[ext_resource type="Texture2D" uid="uid://dynlckurn1peo" path="res://Sprites/Space.png" id="21_ckad2"]
 [ext_resource type="AudioStream" uid="uid://lmslp5qfaoan" path="res://Music/The Mumbai Beat - Hanu Dixit.mp3" id="21_rrdws"]
+[ext_resource type="PackedScene" uid="uid://cwhv25hfkhpka" path="res://Prefabs/BG.tscn" id="21_tu4bo"]
 [ext_resource type="PackedScene" uid="uid://d2ayxn0snwc4x" path="res://Prefabs/Players2.0/Player1.tscn" id="22_w762j"]
 
 [node name="MainScene" type="Node2D"]
@@ -92,12 +92,7 @@ stream = ExtResource("20_2847w")
 [node name="song10" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("21_rrdws")
 
-[node name="Space" type="Sprite2D" parent="."]
-visible = false
-z_index = -2
-position = Vector2(0, -250)
-scale = Vector2(8, 8)
-texture = ExtResource("21_ckad2")
+[node name="Background" parent="." instance=ExtResource("21_tu4bo")]
 
 [connection signal="child_exiting_tree" from="Players" to="Camera2D" method="_on_players_child_exiting_tree"]
 [connection signal="child_exiting_tree" from="Players" to="gameController" method="_on_players_child_exiting_tree"]

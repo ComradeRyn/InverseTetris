@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwhv25hfkhpka"]
+
+[ext_resource type="Texture2D" uid="uid://cmc7ywn2kaqqr" path="res://Sprites/Space2.png" id="1_7q1w5"]
+[ext_resource type="Texture2D" uid="uid://c0yr3haw0u6k5" path="res://Sprites/Stars.png" id="2_xxu20"]
+[ext_resource type="Script" path="res://MoveBG.gd" id="3_g7i0y"]
+
+[node name="Space" type="Sprite2D"]
+z_index = -2
+position = Vector2(0, -250)
+scale = Vector2(12, 12)
+texture = ExtResource("1_7q1w5")
+
+[node name="Stars" type="Sprite2D" parent="."]
+position = Vector2(0, -36)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_xxu20")
+script = ExtResource("3_g7i0y")
+
+[node name="Stars2" type="Sprite2D" parent="."]
+position = Vector2(0, 108)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_xxu20")
+script = ExtResource("3_g7i0y")
