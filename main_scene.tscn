@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dcyrh64ps6j3v"]
+[gd_scene load_steps=23 format=3 uid="uid://dcyrh64ps6j3v"]
 
 [ext_resource type="PackedScene" uid="uid://bvnh4foq8fb7o" path="res://Prefabs/Spawner.tscn" id="1_3qx3v"]
 [ext_resource type="Script" path="res://Scripts/GameController.gd" id="1_whbja"]
@@ -19,7 +19,8 @@
 [ext_resource type="AudioStream" uid="uid://bndmncvbo33ci" path="res://Music/Spring In My Step - Silent Partner.mp3" id="19_60752"]
 [ext_resource type="AudioStream" uid="uid://sc4bxi0nmvop" path="res://Music/Squirm Worm - TrackTribe.mp3" id="20_2847w"]
 [ext_resource type="AudioStream" uid="uid://lmslp5qfaoan" path="res://Music/The Mumbai Beat - Hanu Dixit.mp3" id="21_rrdws"]
-[ext_resource type="PackedScene" path="res://Prefabs/BG.tscn" id="21_tu4bo"]
+[ext_resource type="PackedScene" uid="uid://cwhv25hfkhpka" path="res://Prefabs/BG.tscn" id="21_tu4bo"]
+[ext_resource type="Script" path="res://Scripts/mini_game_manager.gd" id="22_cagkq"]
 [ext_resource type="PackedScene" uid="uid://d2ayxn0snwc4x" path="res://Prefabs/Players2.0/Player1.tscn" id="22_w762j"]
 
 [node name="MainScene" type="Node2D"]
@@ -93,6 +94,9 @@ stream = ExtResource("20_2847w")
 stream = ExtResource("21_rrdws")
 
 [node name="Background" parent="." instance=ExtResource("21_tu4bo")]
+
+[node name="MiniGameManager" type="Node" parent="."]
+script = ExtResource("22_cagkq")
 
 [connection signal="child_exiting_tree" from="Players" to="Camera2D" method="_on_players_child_exiting_tree"]
 [connection signal="child_exiting_tree" from="Players" to="gameController" method="_on_players_child_exiting_tree"]
