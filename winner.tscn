@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqbd1pyfex7ia"]
+[gd_scene load_steps=3 format=3 uid="uid://dna8pe3jsv6dl"]
 
 [ext_resource type="Script" path="res://winner.gd" id="1_ro6xu"]
 [ext_resource type="AudioStream" uid="uid://dsg648hxd0dci" path="res://Audio/male_exclamations.mp3" id="2_j5yav"]

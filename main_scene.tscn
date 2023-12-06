@@ -97,6 +97,9 @@ stream = ExtResource("21_rrdws")
 
 [node name="MiniGameManager" type="Node" parent="."]
 script = ExtResource("22_cagkq")
+game_name = "Inverse Tetris"
 
 [connection signal="child_exiting_tree" from="Players" to="Camera2D" method="_on_players_child_exiting_tree"]
 [connection signal="child_exiting_tree" from="Players" to="gameController" method="_on_players_child_exiting_tree"]
+[connection signal="game_ended" from="MiniGameManager" to="gameController" method="_on_mini_game_manager_game_ended"]
+[connection signal="game_started" from="MiniGameManager" to="gameController" method="_on_mini_game_manager_game_started"]

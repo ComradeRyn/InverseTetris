@@ -1,6 +1,6 @@
 extends Node2D
-
-var numOfPlayers = 4
+var mini_game_manager: MiniGameManager
+var numOfPlayers = mini_game_manager.get_players().size()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -12,7 +12,7 @@ func _process(delta):
 	if(Input.is_action_just_pressed("restart") || numOfPlayers == 0):
 		await get_tree().create_timer(3).timeout
 		get_tree().reload_current_scene()
-	
+	print(numOfPlayers)
 
 
 func _on_players_child_exiting_tree(node): #Whenever anything is destroyed from players node, this code runs
@@ -25,3 +25,11 @@ func swap_fullscreen_mode():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		
+
+func _on_mini_game_manager_game_started(player_data):
+	pass # Replace with function body.
+
+
+func _on_mini_game_manager_game_ended():
+	pass # Replace with function body.
