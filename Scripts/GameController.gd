@@ -1,6 +1,10 @@
 extends Node2D
-var mini_game_manager: MiniGameManager
-var numOfPlayers = mini_game_manager.get_players().size()
+@export var mini_game_manager: MiniGameManager
+var numOfPlayers
+var ranking: Array
+
+func _ready():
+	mini_game_manager.game_started.connect(_on_mini_game_manager_game_started)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -12,11 +16,12 @@ func _process(delta):
 	if(Input.is_action_just_pressed("restart") || numOfPlayers == 0):
 		await get_tree().create_timer(3).timeout
 		get_tree().reload_current_scene()
-	print(numOfPlayers)
 
 
 func _on_players_child_exiting_tree(node): #Whenever anything is destroyed from players node, this code runs
 	numOfPlayers -= 1
+	print(node.playerNumber)
+	ranking.push_back(node.playerNumber)
 	$Boom.play()
 	#MainCamera.apply_shake()
 	
@@ -28,7 +33,7 @@ func swap_fullscreen_mode():
 		
 
 func _on_mini_game_manager_game_started(player_data):
-	pass # Replace with function body.
+	numOfPlayers = mini_game_manager.get_players().size()
 
 
 func _on_mini_game_manager_game_ended():

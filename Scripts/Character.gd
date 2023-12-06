@@ -13,6 +13,7 @@ var isStunned = false
 var grounded = true
 var justDashed = false
 var dashDirection = 0
+var playerNumber = 49 #currently a default value that will be changed
 
 
 @onready var animPlayer = get_node("AnimationPlayer")
