@@ -29,7 +29,8 @@ func _process(delta):
 
 func _on_players_child_exiting_tree(node): #Whenever anything is destroyed from players node, this code runs
 	numOfPlayers -= 1
-	ranking.push_back(node.playerNumber) #Places the player that just died into the ranking array
+	ranking.push_front(node.playerNumber) #Places the player that just died into the ranking array
+	print(node.playerNumber)
 	$Boom.play()
 	#MainCamera.apply_shake()
 	
@@ -67,6 +68,7 @@ func _on_mini_game_manager_game_started(player_data):
 func _on_mini_game_manager_game_ended():
 	get_tree().paused = true 
 
+	print(ranking)
 	var results = [] #Array that will be returned
 	var currentPlayer = ranking.pop_front() #Gets the player who is in first place
 	
