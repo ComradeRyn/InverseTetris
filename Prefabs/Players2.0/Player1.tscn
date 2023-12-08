@@ -386,7 +386,7 @@ keyboard_right = "right1"
 keyboard_left = "left1"
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.4, 1, 1, 1)
+modulate = Color(0.996094, 0.996094, 0.996094, 1)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_jil2m")
 animation = &"Idle"
@@ -397,10 +397,12 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_iou50")
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 3
 script = ExtResource("3_nju2m")

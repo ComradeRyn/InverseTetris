@@ -2,27 +2,31 @@ extends Node2D
 @export var mini_game_manager: MiniGameManager
 @export var players: Node2D
 var numOfPlayers
-var playerPrefabs = ["res://Prefabs/Players2.0/Player1.tscn", "res://Prefabs/Players2.0/Player2.tscn",
+const playerPrefabs: Array[String] = ["res://Prefabs/Players2.0/Player1.tscn", "res://Prefabs/Players2.0/Player2.tscn",
 "res://Prefabs/Players2.0/Player3.tscn", "res://Prefabs/Players2.0/Player4.tscn"]
 var ranking: Array
 var points = [4,3,2,0]
+var gameStarted = false
 
 func _ready():
 	mini_game_manager.game_started.connect(_on_mini_game_manager_game_started)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(Input.is_key_pressed(KEY_F11)):
-		swap_fullscreen_mode()
-	if(numOfPlayers == 1 || Input.is_key_pressed(KEY_0)): #win condition
-#		await get_tree().create_timer(1.5).timeout
-#		get_tree().change_scene_to_file("res://winner.tscn")
-		players.get_child(0).queue_free()
-		await get_tree().create_timer(.25).timeout
-		_on_mini_game_manager_game_ended()
-	if(Input.is_action_just_pressed("restart") || numOfPlayers == 0):
-		await get_tree().create_timer(3).timeout
-		get_tree().reload_current_scene()
+	if(gameStarted):
+		if(Input.is_key_pressed(KEY_F11)):
+			swap_fullscreen_mode()
+		if(numOfPlayers == 1 || Input.is_key_pressed(KEY_0)): #win condition
+	#		await get_tree().create_timer(1.5).timeout
+	#		get_tree().change_scene_to_file("res://winner.tscn")
+			players.get_child(0).queue_free()
+			await get_tree().create_timer(.25).timeout
+			_on_mini_game_manager_game_ended()
+		if(Input.is_action_just_pressed("restart") || numOfPlayers == 0):
+			await get_tree().create_timer(3).timeout
+			get_tree().reload_current_scene()
+		if(Input.is_key_pressed(KEY_9)):
+			mini_game_manager.end_game()
 
 
 func _on_players_child_exiting_tree(node): #Whenever anything is destroyed from players node, this code runs
@@ -40,6 +44,27 @@ func swap_fullscreen_mode():
 
 func _on_mini_game_manager_game_started(player_data):
 	numOfPlayers = mini_game_manager.get_players().size()
+	var playerNum = 1;
+	for player in player_data:
+		var currentPlayer
+		print(player)
+		if(playerNum == 1):
+			currentPlayer = preload("res://Prefabs/Players2.0/Player1.tscn").instantiate()
+			currentPlayer.set_position(Vector2(80, -20))
+		elif(playerNum == 2):
+			currentPlayer = preload("res://Prefabs/Players2.0/Player2.tscn").instantiate()
+			currentPlayer.set_position(Vector2(20, -20))
+		elif(playerNum == 3):
+			currentPlayer = preload("res://Prefabs/Players2.0/Player3.tscn").instantiate()
+			currentPlayer.set_position(Vector2(-20, -20))
+		elif(playerNum == 4):
+			currentPlayer = preload("res://Prefabs/Players2.0/Player4.tscn").instantiate()
+			currentPlayer.set_position(Vector2(-80, -20))
+		players.add_child(currentPlayer)
+		currentPlayer.playerNumber = player.number
+		currentPlayer.modulate = player.color
+		playerNum += 1
+	gameStarted = true
 
 
 func _on_mini_game_manager_game_ended():
