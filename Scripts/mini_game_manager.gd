@@ -169,7 +169,7 @@ func apply_results(results: Array):
 ## 	  },
 ## ]
 func end_game(results = null):
-	game_ended.emit()
+	#game_ended.emit()
 	
 	if results != null:
 		apply_results(results)

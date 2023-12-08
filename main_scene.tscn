@@ -78,9 +78,10 @@ stream = ExtResource("21_rrdws")
 script = ExtResource("22_cagkq")
 game_name = "Inverse Tetris"
 
-[node name="gameController" type="Node2D" parent="." node_paths=PackedStringArray("mini_game_manager")]
+[node name="gameController" type="Node2D" parent="." node_paths=PackedStringArray("mini_game_manager", "players")]
 script = ExtResource("1_whbja")
 mini_game_manager = NodePath("../MiniGameManager")
+players = NodePath("../Players")
 
 [node name="Boom" type="AudioStreamPlayer2D" parent="gameController"]
 stream = ExtResource("2_kfb8x")
