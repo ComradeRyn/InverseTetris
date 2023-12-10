@@ -41,13 +41,16 @@ script = ExtResource("11_6cf61")
 
 [node name="song1" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("12_wnfp1")
+volume_db = -5.0
 
 [node name="song2" type="AudioStreamPlayer" parent="Music"]
 editor_description = "apple song"
 stream = ExtResource("13_i72hp")
+volume_db = -5.0
 
 [node name="song3" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("14_tiyub")
+volume_db = -4.0
 
 [node name="song4" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("15_n21tn")
@@ -57,18 +60,22 @@ stream = ExtResource("16_ytnax")
 
 [node name="song6" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("17_65pgu")
+volume_db = -5.0
 
 [node name="song7" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("18_uqksv")
+volume_db = -2.0
 
 [node name="song8" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("19_60752")
+volume_db = -5.0
 
 [node name="song9" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("20_2847w")
 
 [node name="song10" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("21_rrdws")
+volume_db = -5.0
 
 [node name="Background" parent="." instance=ExtResource("21_tu4bo")]
 
@@ -82,8 +89,9 @@ mini_game_manager = NodePath("../MiniGameManager")
 players = NodePath("../Players")
 
 [node name="Boom" type="AudioStreamPlayer2D" parent="gameController"]
+position = Vector2(-1, 0)
 stream = ExtResource("2_kfb8x")
-volume_db = 12.0
+volume_db = 5.0
 
 [node name="Players" type="Node2D" parent="."]
 
