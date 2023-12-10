@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcr43xn67csjo"]
+
+[ext_resource type="Texture2D" uid="uid://ck5yci483xh5t" path="res://Sprites/UI/KeysIntructions.png" id="1_sl3gn"]
+[ext_resource type="Texture2D" uid="uid://p5kfo8slg3km" path="res://Sprites/UI/ControllerIntructions.png" id="2_4vemk"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sl3gn")
+region_enabled = true
+region_rect = Rect2(3, 25, 82, 32)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-5, 42)
+texture = ExtResource("2_4vemk")
+region_enabled = true
+region_rect = Rect2(10, 19, 68, 47)
