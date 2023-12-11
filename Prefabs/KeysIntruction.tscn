@@ -6,12 +6,13 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-80, 2.08165e-12)
 texture = ExtResource("1_sl3gn")
 region_enabled = true
 region_rect = Rect2(3, 25, 82, 32)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-5, 42)
+position = Vector2(80, 2.08165e-12)
 texture = ExtResource("2_4vemk")
 region_enabled = true
 region_rect = Rect2(10, 19, 68, 47)
