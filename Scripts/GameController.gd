@@ -5,6 +5,10 @@ var numOfPlayers
 var ranking: Array #Array which the players will be placed in accending order
 var points = [4,3,2,0] #Point values that will be earned depending on the placing
 var gameStarted = false #Checks to see if the game started
+var gameEnd = true
+var ENDTIME = 225
+var timeElapsed = 0
+var startMusic = true
 
 func _ready():
 	mini_game_manager.game_started.connect(_on_mini_game_manager_game_started) #Connects the game_started singnal
@@ -14,23 +18,29 @@ func _process(delta):
 	if(gameStarted):
 		if(Input.is_key_pressed(KEY_F11)):
 			swap_fullscreen_mode()
-		if(numOfPlayers == 1 || Input.is_key_pressed(KEY_0)): #win condition
+		if(numOfPlayers <= 1 || Input.is_key_pressed(KEY_0)): #win condition
 	#		await get_tree().create_timer(1.5).timeout
 	#		get_tree().change_scene_to_file("res://winner.tscn")
-			players.get_child(0).queue_free() #Removes the last player and places them as the winner
-			await get_tree().create_timer(.25).timeout
-			_on_mini_game_manager_game_ended() #ends the game
-		if(Input.is_action_just_pressed("restart") || numOfPlayers == 0):
-			await get_tree().create_timer(3).timeout
-			get_tree().reload_current_scene()
-		if(Input.is_key_pressed(KEY_9)):
-			mini_game_manager.end_game()
+			if(startMusic):	
+				$yippee.play()
+				startMusic = false
+			timeElapsed+= 1
+			Engine.time_scale = .5
+			if(timeElapsed == ENDTIME):
+				if(numOfPlayers >= 1):
+					players.get_child(0).queue_free() #Removes the last player and places them as the winner
+				await get_tree().create_timer(.25).timeout
+				_on_mini_game_manager_game_ended() #ends the game
+#		if(Input.is_action_just_pressed("restart") || numOfPlayers == 0):
+#			await get_tree().create_timer(3).timeout
+#			get_tree().reload_current_scene()
+#		if(Input.is_key_pressed(KEY_9)):
+#			mini_game_manager.end_game()
 
 
 func _on_players_child_exiting_tree(node): #Whenever anything is destroyed from players node, this code runs
 	numOfPlayers -= 1
 	ranking.push_front(node.playerNumber) #Places the player that just died into the ranking array
-	print(node.playerNumber)
 	$Boom.play()
 	#MainCamera.apply_shake()
 	
@@ -68,7 +78,6 @@ func _on_mini_game_manager_game_started(player_data):
 func _on_mini_game_manager_game_ended():
 	get_tree().paused = true 
 
-	print(ranking)
 	var results = [] #Array that will be returned
 	var currentPlayer = ranking.pop_front() #Gets the player who is in first place
 	
