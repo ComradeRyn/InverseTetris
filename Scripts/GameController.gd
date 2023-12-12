@@ -29,7 +29,7 @@ func _process(delta):
 			if(timeElapsed == ENDTIME):
 				if(numOfPlayers >= 1):
 					players.get_child(0).queue_free() #Removes the last player and places them as the winner
-				await get_tree().create_timer(.25).timeout
+				await get_tree().create_timer(.1).timeout
 				_on_mini_game_manager_game_ended() #ends the game
 #		if(Input.is_action_just_pressed("restart") || numOfPlayers == 0):
 #			await get_tree().create_timer(3).timeout
