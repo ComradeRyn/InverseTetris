@@ -1,19 +1,69 @@
-[gd_scene load_steps=3 format=3 uid="uid://dna8pe3jsv6dl"]
+[gd_scene load_steps=10 format=3 uid="uid://dna8pe3jsv6dl"]
 
 [ext_resource type="Script" path="res://winner.gd" id="1_ro6xu"]
 [ext_resource type="AudioStream" uid="uid://dsg648hxd0dci" path="res://Audio/male_exclamations.mp3" id="2_j5yav"]
+[ext_resource type="Texture2D" uid="uid://cmc7ywn2kaqqr" path="res://Sprites/Space2.png" id="2_shfpq"]
+[ext_resource type="Texture2D" uid="uid://c1psge5h5uvoi" path="res://Sprites/Player/Player2.0.png" id="3_4mscv"]
+[ext_resource type="Texture2D" uid="uid://c0yr3haw0u6k5" path="res://Sprites/Stars.png" id="3_sr5kx"]
+[ext_resource type="Texture2D" uid="uid://ds7mvhxuu6onv" path="res://Sprites/UI/reststartButt.png" id="4_iu7cy"]
+[ext_resource type="Texture2D" uid="uid://dpj7mh06d646t" path="res://Sprites/UI/pressedplayer.png" id="5_08wdn"]
+[ext_resource type="Texture2D" uid="uid://d2t72knv2ygal" path="res://Sprites/UI/exitButt.png" id="6_6v3lj"]
+[ext_resource type="Texture2D" uid="uid://cq86xdyrgg4gw" path="res://Sprites/UI/menuButt.png" id="7_pf1ac"]
 
-[node name="Winner" type="Node2D"]
+[node name="Winner" type="Node2D" node_paths=PackedStringArray("winnerSprite", "winnerText")]
 script = ExtResource("1_ro6xu")
+winnerSprite = NodePath("WinnerSprite")
+winnerText = NodePath("WinnerBox")
 
-[node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 225.0
-offset_top = 87.0
-offset_right = 467.0
-offset_bottom = 224.0
-text = "Winner! :)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(556, 302)
+scale = Vector2(8.2, 8.2)
+texture = ExtResource("2_shfpq")
 
-press r to go back"
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-2.86852, -19.5211)
+texture = ExtResource("3_sr5kx")
 
 [node name="Win" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_j5yav")
+
+[node name="WinnerSprite" type="Sprite2D" parent="."]
+position = Vector2(726, 178)
+scale = Vector2(10.4375, 10.3125)
+texture = ExtResource("3_4mscv")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="WinnerBox" type="TextEdit" parent="."]
+offset_left = 593.0
+offset_top = 279.0
+offset_right = 884.0
+offset_bottom = 394.0
+
+[node name="Restart" type="TextureButton" parent="."]
+offset_left = 233.0
+offset_top = 18.0
+offset_right = 405.0
+offset_bottom = 158.0
+texture_normal = ExtResource("4_iu7cy")
+texture_pressed = ExtResource("5_08wdn")
+
+[node name="Exit" type="TextureButton" parent="."]
+offset_left = 233.0
+offset_top = 407.0
+offset_right = 405.0
+offset_bottom = 547.0
+texture_normal = ExtResource("6_6v3lj")
+texture_pressed = ExtResource("5_08wdn")
+
+[node name="Menu" type="TextureButton" parent="."]
+offset_left = 233.0
+offset_top = 218.0
+offset_right = 405.0
+offset_bottom = 358.0
+texture_normal = ExtResource("7_pf1ac")
+texture_pressed = ExtResource("5_08wdn")
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

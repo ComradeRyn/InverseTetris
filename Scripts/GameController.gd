@@ -9,6 +9,7 @@ var gameEnd = true
 var ENDTIME = 225
 var timeElapsed = 0
 var startMusic = true
+var playerColors: Array
 
 func _ready():
 	mini_game_manager.game_started.connect(_on_mini_game_manager_game_started) #Connects the game_started singnal
@@ -28,6 +29,7 @@ func _process(delta):
 			Engine.time_scale = .25
 			if(timeElapsed == ENDTIME):
 				if(numOfPlayers >= 1):
+					GlobalData.setColor(playerColors[players.get_child(0).playerNumber - 1])
 					players.get_child(0).queue_free() #Removes the last player and places them as the winner
 				await get_tree().create_timer(.25).timeout
 				_on_mini_game_manager_game_ended() #ends the game
@@ -52,8 +54,7 @@ func swap_fullscreen_mode():
 		
 
 func _on_mini_game_manager_game_started(player_data):
-	numOfPlayers = mini_game_manager.get_players().size() #Initializes the number of players
-
+	numOfPlayers = GlobalData.numPlayers #Initializes the number of players
 	for player in player_data: #Goes through all the player data
 		var currentPlayer
 		var playerNum = player.number; #Gets the player number that we are on
@@ -72,6 +73,9 @@ func _on_mini_game_manager_game_started(player_data):
 		players.add_child(currentPlayer) #adds the player to the "Players" node
 		currentPlayer.playerNumber = playerNum #Sets their player number
 		currentPlayer.modulate = player.color #Sets the color
+		playerColors.push_back(player.color)
+		if(numOfPlayers == playerNum):
+			break
 	gameStarted = true #When the loop terminates, set this to true to start the game
 
 
@@ -80,11 +84,9 @@ func _on_mini_game_manager_game_ended():
 
 	var results = [] #Array that will be returned
 	var currentPlayer = ranking.pop_front() #Gets the player who is in first place
-	
+	GlobalData.setRank(currentPlayer)
 	while(!ranking.is_empty()):
 		results.append(MiniGameManager.PlayerResultData.new(currentPlayer, points.pop_front())) #Places the new player data into results
 		currentPlayer = ranking.pop_front() #gets the next player in the ranking list
 	
-	mini_game_manager.apply_results(results)
-	
-	mini_game_manager.end_game()
+	get_tree().change_scene_to_file("res://winner.tscn")
