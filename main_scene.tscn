@@ -14,8 +14,8 @@
 [ext_resource type="AudioStream" uid="uid://dytasth66agqp" path="res://Music/High Noon - TrackTribe.mp3" id="17_65pgu"]
 [ext_resource type="AudioStream" uid="uid://cqcolbh4eqt0n" path="res://Music/Raag Pilu - Sandeep Das, Adhiraj Chaudhuri, Bivakar Chaudhuri.mp3" id="18_uqksv"]
 [ext_resource type="AudioStream" uid="uid://bndmncvbo33ci" path="res://Music/Spring In My Step - Silent Partner.mp3" id="19_60752"]
+[ext_resource type="AudioStream" uid="uid://2g4rapsj57ix" path="res://Audio/OhYeah.mp3" id="19_op87k"]
 [ext_resource type="PackedScene" uid="uid://dcr43xn67csjo" path="res://Prefabs/KeysIntruction.tscn" id="19_oqeni"]
-[ext_resource type="AudioStream" uid="uid://dsg648hxd0dci" path="res://Audio/male_exclamations.mp3" id="19_w82qs"]
 [ext_resource type="AudioStream" uid="uid://sc4bxi0nmvop" path="res://Music/Squirm Worm - TrackTribe.mp3" id="20_2847w"]
 [ext_resource type="Script" path="res://Prefabs/KeysIntruction.gd" id="20_h5idq"]
 [ext_resource type="AudioStream" uid="uid://lmslp5qfaoan" path="res://Music/The Mumbai Beat - Hanu Dixit.mp3" id="21_rrdws"]
@@ -94,7 +94,7 @@ stream = ExtResource("2_kfb8x")
 volume_db = 5.0
 
 [node name="yippee" type="AudioStreamPlayer2D" parent="gameController"]
-stream = ExtResource("19_w82qs")
+stream = ExtResource("19_op87k")
 volume_db = 24.0
 
 [node name="Players" type="Node2D" parent="."]
