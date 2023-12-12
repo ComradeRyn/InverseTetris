@@ -9,8 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://dyys335uolkxo" path="res://Music/Adana - Teental - Aditya Verma, Subir Dev.mp3" id="12_wnfp1"]
 [ext_resource type="AudioStream" uid="uid://bu4wyifr7jtje" path="res://Music/AppleSong2.mp3" id="13_i72hp"]
 [ext_resource type="AudioStream" uid="uid://chg3syxhwmumf" path="res://Music/Crash & Burn - Aakash Gandhi.mp3" id="14_tiyub"]
+[ext_resource type="AudioStream" uid="uid://bnw01ltk51xjh" path="res://Music/SpaceSong2.mp3" id="15_bvulw"]
 [ext_resource type="AudioStream" uid="uid://dgavleqp7xs2y" path="res://Music/elf-singing-89296.mp3" id="15_n21tn"]
-[ext_resource type="AudioStream" uid="uid://calggxjyknmen" path="res://Music/SpaceSong.wav" id="15_vva0j"]
 [ext_resource type="AudioStream" uid="uid://b15evfjwls3jb" path="res://Music/guitar-riff-159089.mp3" id="16_ytnax"]
 [ext_resource type="AudioStream" uid="uid://dytasth66agqp" path="res://Music/High Noon - TrackTribe.mp3" id="17_65pgu"]
 [ext_resource type="AudioStream" uid="uid://cqcolbh4eqt0n" path="res://Music/Raag Pilu - Sandeep Das, Adhiraj Chaudhuri, Bivakar Chaudhuri.mp3" id="18_uqksv"]
@@ -79,7 +79,10 @@ stream = ExtResource("21_rrdws")
 volume_db = -5.0
 
 [node name="SpaceSong" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource("15_vva0j")
+stream = ExtResource("15_bvulw")
+
+[node name="SpaceSong2" type="AudioStreamPlayer2D" parent="Music"]
+stream = ExtResource("15_bvulw")
 
 [node name="Background" parent="." instance=ExtResource("21_tu4bo")]
 
@@ -95,7 +98,7 @@ players = NodePath("../Players")
 [node name="Boom" type="AudioStreamPlayer2D" parent="gameController"]
 position = Vector2(-1, 0)
 stream = ExtResource("2_kfb8x")
-volume_db = 5.0
+volume_db = 2.189
 
 [node name="yippee" type="AudioStreamPlayer2D" parent="gameController"]
 stream = ExtResource("19_w82qs")
