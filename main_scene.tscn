@@ -102,7 +102,7 @@ volume_db = 2.189
 
 [node name="yippee" type="AudioStreamPlayer2D" parent="gameController"]
 stream = ExtResource("19_op87k")
-volume_db = 24.0
+volume_db = 5.0
 
 [node name="Players" type="Node2D" parent="."]
 

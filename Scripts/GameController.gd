@@ -6,7 +6,7 @@ var ranking: Array #Array which the players will be placed in accending order
 var points = [4,3,2,0] #Point values that will be earned depending on the placing
 var gameStarted = false #Checks to see if the game started
 var gameEnd = true
-var ENDTIME = 225
+var ENDTIME = 190
 var timeElapsed = 0
 var startMusic = true
 
