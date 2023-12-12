@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dcyrh64ps6j3v"]
+[gd_scene load_steps=23 format=3 uid="uid://dcyrh64ps6j3v"]
 
 [ext_resource type="PackedScene" uid="uid://bvnh4foq8fb7o" path="res://Prefabs/Spawner.tscn" id="1_3qx3v"]
 [ext_resource type="Script" path="res://Scripts/GameController.gd" id="1_whbja"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bu4wyifr7jtje" path="res://Music/AppleSong2.mp3" id="13_i72hp"]
 [ext_resource type="AudioStream" uid="uid://chg3syxhwmumf" path="res://Music/Crash & Burn - Aakash Gandhi.mp3" id="14_tiyub"]
 [ext_resource type="AudioStream" uid="uid://dgavleqp7xs2y" path="res://Music/elf-singing-89296.mp3" id="15_n21tn"]
+[ext_resource type="AudioStream" uid="uid://calggxjyknmen" path="res://Music/SpaceSong.wav" id="15_vva0j"]
 [ext_resource type="AudioStream" uid="uid://b15evfjwls3jb" path="res://Music/guitar-riff-159089.mp3" id="16_ytnax"]
 [ext_resource type="AudioStream" uid="uid://dytasth66agqp" path="res://Music/High Noon - TrackTribe.mp3" id="17_65pgu"]
 [ext_resource type="AudioStream" uid="uid://cqcolbh4eqt0n" path="res://Music/Raag Pilu - Sandeep Das, Adhiraj Chaudhuri, Bivakar Chaudhuri.mp3" id="18_uqksv"]
@@ -76,6 +77,9 @@ stream = ExtResource("20_2847w")
 [node name="song10" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("21_rrdws")
 volume_db = -5.0
+
+[node name="SpaceSong" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("15_vva0j")
 
 [node name="Background" parent="." instance=ExtResource("21_tu4bo")]
 
