@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dcyrh64ps6j3v"]
+[gd_scene load_steps=23 format=3 uid="uid://dcyrh64ps6j3v"]
 
 [ext_resource type="PackedScene" uid="uid://bvnh4foq8fb7o" path="res://Prefabs/Spawner.tscn" id="1_3qx3v"]
 [ext_resource type="Script" path="res://Scripts/GameController.gd" id="1_whbja"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://dyys335uolkxo" path="res://Music/Adana - Teental - Aditya Verma, Subir Dev.mp3" id="12_wnfp1"]
 [ext_resource type="AudioStream" uid="uid://bu4wyifr7jtje" path="res://Music/AppleSong2.mp3" id="13_i72hp"]
 [ext_resource type="AudioStream" uid="uid://chg3syxhwmumf" path="res://Music/Crash & Burn - Aakash Gandhi.mp3" id="14_tiyub"]
+[ext_resource type="AudioStream" uid="uid://bnw01ltk51xjh" path="res://Music/SpaceSong2.mp3" id="15_bvulw"]
 [ext_resource type="AudioStream" uid="uid://dgavleqp7xs2y" path="res://Music/elf-singing-89296.mp3" id="15_n21tn"]
 [ext_resource type="AudioStream" uid="uid://b15evfjwls3jb" path="res://Music/guitar-riff-159089.mp3" id="16_ytnax"]
 [ext_resource type="AudioStream" uid="uid://dytasth66agqp" path="res://Music/High Noon - TrackTribe.mp3" id="17_65pgu"]
@@ -77,6 +78,12 @@ stream = ExtResource("20_2847w")
 stream = ExtResource("21_rrdws")
 volume_db = -5.0
 
+[node name="SpaceSong" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("15_bvulw")
+
+[node name="SpaceSong2" type="AudioStreamPlayer2D" parent="Music"]
+stream = ExtResource("15_bvulw")
+
 [node name="Background" parent="." instance=ExtResource("21_tu4bo")]
 
 [node name="MiniGameManager" type="Node" parent="."]
@@ -91,7 +98,7 @@ players = NodePath("../Players")
 [node name="Boom" type="AudioStreamPlayer2D" parent="gameController"]
 position = Vector2(-1, 0)
 stream = ExtResource("2_kfb8x")
-volume_db = 5.0
+volume_db = 2.189
 
 [node name="yippee" type="AudioStreamPlayer2D" parent="gameController"]
 stream = ExtResource("19_op87k")

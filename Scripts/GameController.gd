@@ -18,14 +18,14 @@ func _process(delta):
 	if(gameStarted):
 		if(Input.is_key_pressed(KEY_F11)):
 			swap_fullscreen_mode()
-		if(numOfPlayers <= 1 || Input.is_key_pressed(KEY_0)): #win condition
+		if(numOfPlayers <= 1): #win condition
 	#		await get_tree().create_timer(1.5).timeout
 	#		get_tree().change_scene_to_file("res://winner.tscn")
 			if(startMusic):	
 				$yippee.play()
 				startMusic = false
 			timeElapsed+= 1
-			Engine.time_scale = .5
+			Engine.time_scale = .25
 			if(timeElapsed == ENDTIME):
 				if(numOfPlayers >= 1):
 					players.get_child(0).queue_free() #Removes the last player and places them as the winner

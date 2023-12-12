@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwhv25hfkhpka"]
+[gd_scene load_steps=5 format=3 uid="uid://cwhv25hfkhpka"]
 
 [ext_resource type="Texture2D" uid="uid://cmc7ywn2kaqqr" path="res://Sprites/Space2.png" id="1_7q1w5"]
-[ext_resource type="Texture2D" uid="uid://c0yr3haw0u6k5" path="res://Sprites/Stars.png" id="2_xxu20"]
+[ext_resource type="Texture2D" uid="uid://docfhgidkst2y" path="res://Sprites/Stars-slider1.png" id="2_1tg53"]
 [ext_resource type="Script" path="res://MoveBG.gd" id="3_g7i0y"]
+[ext_resource type="Texture2D" uid="uid://bgtg3afhrl0or" path="res://Sprites/Stars-slider2.png" id="4_sliym"]
 
 [node name="Space" type="Sprite2D"]
 z_index = -2
@@ -13,11 +14,11 @@ texture = ExtResource("1_7q1w5")
 [node name="Stars" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, -36)
 scale = Vector2(0.85, 0.85)
-texture = ExtResource("2_xxu20")
+texture = ExtResource("2_1tg53")
 script = ExtResource("3_g7i0y")
 
 [node name="Stars2" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, 108)
 scale = Vector2(0.85, 0.85)
-texture = ExtResource("2_xxu20")
+texture = ExtResource("4_sliym")
 script = ExtResource("3_g7i0y")
